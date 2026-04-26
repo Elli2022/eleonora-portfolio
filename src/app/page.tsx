@@ -28,7 +28,7 @@ const projects: Project[] = [
       "Byggd för tydlig navigation mellan byrå, tjänster och kontakt",
     ],
     stack: ["React", "TypeScript", "Netlify Functions"],
-    href: "https://wadvokatbyra-malmo.netlify.app/",
+    href: "https://w-advokatbyra-malmo.netlify.app/",
     cta: "Öppna livesajt",
     badge: "Juridik",
     previewHighlights: ["Affärsjuridik", "Malmö", "Tjänstesidor", "Live på Netlify"],
