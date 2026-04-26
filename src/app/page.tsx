@@ -5,7 +5,9 @@ type Project = {
   impact: string[];
   stack: string[];
   href: string;
+  cta: string;
   badge: string;
+  previewHighlights: string[];
   preview: {
     gradient: string;
     surface: string;
@@ -17,17 +19,19 @@ type Project = {
 const projects: Project[] = [
   {
     name: "W Advokatbyrå",
-    category: "Varumärkesdriven företagswebb",
+    category: "Förtroendedriven företagswebb",
     summary:
       "En förtroendeingivande sajt för juridisk rådgivning med premiumkänsla, tydlig struktur och fokus på kontaktvägar.",
     impact: [
       "Skapar ett lugnt och professionellt första intryck",
       "Lyfter fram juridiska tjänster utan att bli tung eller stel",
-      "Designad för tydlighet, tempo och enkel navigering",
+      "Byggd för tydlig navigation mellan byrå, tjänster och kontakt",
     ],
-    stack: ["React", "Responsiv design", "Visuell identitet"],
-    href: "https://advokatbyra.netlify.app/",
+    stack: ["React", "TypeScript", "Netlify Functions"],
+    href: "https://wadvokatbyra-malmo.netlify.app/",
+    cta: "Öppna livesajt",
     badge: "Juridik",
+    previewHighlights: ["Affärsjuridik", "Malmö", "Tjänstesidor", "Live på Netlify"],
     preview: {
       gradient: "linear-gradient(135deg, #121826 0%, #20345a 55%, #c7a56d 100%)",
       surface: "rgba(255, 248, 236, 0.14)",
@@ -36,23 +40,69 @@ const projects: Project[] = [
     },
   },
   {
-    name: "Ellis Receptbok",
-    category: "Receptbibliotek och PWA-känsla",
+    name: "Receptbok",
+    category: "Fullstack receptplattform",
     summary:
-      "En receptsajt byggd för mobilen med tydliga CTA:er, sparade favoriter och ett varmt, vardagsnära formspråk.",
+      "En modern receptapp med PWA-stöd, sparade favoriter och möjlighet att koppla frontend mot en befintlig Express- och MongoDB-backend.",
     impact: [
-      "App-lik upplevelse för att hitta, spara och laga recept",
-      "Tydlig innehållshierarki som fungerar lika bra i mobilen",
-      "Grönt, inbjudande uttryck som passar innehållet",
+      "App-lik upplevelse för att hitta, spara och hantera recept",
+      "Mobilvänlig installation med manifest och service worker",
+      "Frontend i Next.js med stöd för backend-synk vid behov",
     ],
-    stack: ["Next.js", "PWA", "Tailwind CSS"],
+    stack: ["Next.js", "TypeScript", "Express", "MongoDB"],
     href: "https://ellisreceptbok.netlify.app/",
+    cta: "Öppna livesajt",
     badge: "Mat & vardag",
+    previewHighlights: ["PWA", "Responsiv", "Favoriter", "Live på Netlify"],
     preview: {
       gradient: "linear-gradient(135deg, #0f766e 0%, #34a853 48%, #f0d69f 100%)",
       surface: "rgba(255, 255, 255, 0.16)",
       accent: "#f5f1e8",
       highlight: "#d8f3c8",
+    },
+  },
+  {
+    name: "Friskare Fysik",
+    category: "Klinikwebb med SEO och bokning",
+    summary:
+      "En ny webbplats för Friskare Fysik i Malmö, byggd för snabb laddning, enkel förvaltning och tydliga landningssidor för behandlingar och bokning.",
+    impact: [
+      "Tydliga landningssidor för fysioterapi, kiropraktor och massage",
+      "Kontaktformulär via Netlify Forms och extern bokning",
+      "Snabb statisk sajt med fokus på lokal synlighet i Malmö",
+    ],
+    stack: ["Astro", "TypeScript", "Netlify Forms", "SEO"],
+    href: "https://www.friskarefysik.se/",
+    cta: "Öppna livesajt",
+    badge: "Hälsa",
+    previewHighlights: ["Klinik", "SEO", "Bokning", "Egen domän"],
+    preview: {
+      gradient: "linear-gradient(135deg, #184b4c 0%, #2b7a78 48%, #f1c27d 100%)",
+      surface: "rgba(255, 255, 255, 0.14)",
+      accent: "#f9f2dd",
+      highlight: "#ffd9a0",
+    },
+  },
+  {
+    name: "Timetjek App",
+    category: "Fullstack tidrapportering",
+    summary:
+      "Ett fullstackprojekt för inloggning, stämpling och hantering av tidsposter, byggt som monorepo med Laravel i backend och Vue 3 i frontend.",
+    impact: [
+      "Stämpla in och ut med valfria GPS-koordinater",
+      "Redigera, validera och radera tidsposter i ett sammanhållet flöde",
+      "Tydlig uppdelning mellan REST API, auth och mobilvänligt gränssnitt",
+    ],
+    stack: ["Laravel", "Vue 3", "TypeScript", "MySQL"],
+    href: "https://github.com/Elli2022/timetjek-app",
+    cta: "Se repo",
+    badge: "Fullstack",
+    previewHighlights: ["Laravel API", "Vue 3", "Tidsposter", "GitHub repo"],
+    preview: {
+      gradient: "linear-gradient(135deg, #101828 0%, #1d4ed8 50%, #34d399 100%)",
+      surface: "rgba(255, 255, 255, 0.16)",
+      accent: "#dbeafe",
+      highlight: "#bbf7d0",
     },
   },
 ];
@@ -141,21 +191,22 @@ function ProjectPreview({ project }: { project: Project }) {
             {project.name}
           </h3>
           <div className="grid gap-3 text-sm text-white/82 sm:grid-cols-2">
-            <div className="rounded-2xl border border-white/12 bg-white/10 p-3">
-              Premium känsla
-            </div>
-            <div className="rounded-2xl border border-white/12 bg-white/10 p-3">
-              Responsiv layout
-            </div>
-            <div className="rounded-2xl border border-white/12 bg-white/10 p-3">
-              Tydliga CTA:er
-            </div>
-            <div
-              className="rounded-2xl border border-white/12 p-3"
-              style={{ backgroundColor: project.preview.surface, color: project.preview.highlight }}
-            >
-              Live på Netlify
-            </div>
+            {project.previewHighlights.map((item, index) => (
+              <div
+                key={item}
+                className="rounded-2xl border border-white/12 p-3"
+                style={
+                  index === project.previewHighlights.length - 1
+                    ? {
+                        backgroundColor: project.preview.surface,
+                        color: project.preview.highlight,
+                      }
+                    : undefined
+                }
+              >
+                {item}
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -223,7 +274,7 @@ export default function Home() {
 
             <div className="reveal grid gap-3 sm:grid-cols-3" style={{ animationDelay: "220ms" }}>
               {[
-                { value: "2", label: "Live case redo" },
+                { value: "4", label: "Aktuella case" },
                 { value: "Svensk", label: "Copy och tonalitet" },
                 { value: "2026", label: "Aktuell stack" },
               ].map((item) => (
@@ -254,9 +305,9 @@ export default function Home() {
               </h2>
             </div>
             <p className="max-w-xl text-base leading-7 text-[color:var(--muted)]">
-              Portfolion är byggd för att enkelt kunna fyllas på med fler projekt,
-              men redan nu visar den både ett förtroendedrivet företagsprojekt och
-              en mer varm, innehållsdriven produktupplevelse.
+              Portfolion speglar nu en bredare mix av aktuella projekt:
+              företagswebb, receptplattform, klinikwebb och fullstackapp för
+              tidrapportering. Det gör det lättare att visa både formkänsla och teknisk bredd.
             </p>
           </div>
 
@@ -320,7 +371,7 @@ export default function Home() {
                         rel="noreferrer"
                         className="inline-flex items-center gap-2 rounded-full bg-[color:var(--ink)] px-5 py-3 text-sm font-semibold text-white transition hover:translate-y-[-1px] hover:bg-black"
                       >
-                        Öppna liveprojektet
+                        {project.cta}
                         <ExternalIcon />
                       </a>
                     </div>
