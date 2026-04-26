@@ -11,13 +11,15 @@
   --accent-deep: #154a4b;
   --highlight: #e2c58d;
   --shadow: 0 32px 90px rgba(39, 28, 22, 0.12);
+  --font-body: "Avenir Next", "Segoe UI", sans-serif;
+  --font-display-local: "Gill Sans", "Trebuchet MS", sans-serif;
 }
 
 @theme inline {
   --color-background: var(--canvas);
   --color-foreground: var(--ink);
-  --font-sans: var(--font-manrope);
-  --font-display: var(--font-space-grotesk);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display-local);
 }
 
 html {
@@ -34,7 +36,7 @@ body {
     radial-gradient(circle at 20% 10%, rgba(226, 197, 141, 0.14), transparent 26%),
     var(--canvas);
   color: var(--ink);
-  font-family: var(--font-manrope), sans-serif;
+  font-family: var(--font-body), sans-serif;
 }
 
 ::selection {
@@ -88,7 +90,7 @@ a {
 }
 
 .section-title {
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-display-local), sans-serif;
   letter-spacing: -0.04em;
 }
 
