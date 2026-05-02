@@ -62,47 +62,25 @@ const projects: Project[] = [
     },
   },
   {
-    name: "Friskare Fysik",
-    category: "Klinikwebb med SEO och bokning",
+    name: "Tidspuls",
+    category: "Webbapp för tid och närvaro",
     summary:
-      "En ny webbplats för Friskare Fysik i Malmö, byggd för snabb laddning, enkel förvaltning och tydliga landningssidor för behandlingar och bokning.",
+      "En inloggad webbapp där användare skapar konto, loggar in och jobbar med tid och aktivitet i ett tydligt flöde. Deployad som snabb SPA på Netlify.",
     impact: [
-      "Tydliga landningssidor för fysioterapi, kiropraktor och massage",
-      "Kontaktformulär via Netlify Forms och extern bokning",
-      "Snabb statisk sajt med fokus på lokal synlighet i Malmö",
+      "Registrering och inloggning med fokus på en trygg första upplevelse",
+      "Gränssnitt byggt för att fungera lika bra på mobil som på desktop",
+      "Live-miljö på Netlify med enkel delning av länk till intressenter",
     ],
-    stack: ["Astro", "TypeScript", "Netlify Forms", "SEO"],
-    href: "https://www.friskarefysik.se/",
+    stack: ["Vue 3", "TypeScript", "Netlify"],
+    href: "https://tidspuls-app.netlify.app/",
     cta: "Öppna livesajt",
-    badge: "Hälsa",
-    previewHighlights: ["Klinik", "SEO", "Bokning", "Egen domän"],
+    badge: "Webbapp",
+    previewHighlights: ["Auth-flöde", "Responsiv", "Tid i fokus", "Live på Netlify"],
     preview: {
-      gradient: "linear-gradient(135deg, #184b4c 0%, #2b7a78 48%, #f1c27d 100%)",
-      surface: "rgba(255, 255, 255, 0.14)",
-      accent: "#f9f2dd",
-      highlight: "#ffd9a0",
-    },
-  },
-  {
-    name: "Timetjek App",
-    category: "Fullstack tidrapportering",
-    summary:
-      "Ett fullstackprojekt för inloggning, stämpling och hantering av tidsposter, byggt som monorepo med Laravel i backend och Vue 3 i frontend.",
-    impact: [
-      "Stämpla in och ut med valfria GPS-koordinater",
-      "Redigera, validera och radera tidsposter i ett sammanhållet flöde",
-      "Tydlig uppdelning mellan REST API, auth och mobilvänligt gränssnitt",
-    ],
-    stack: ["Laravel", "Vue 3", "TypeScript", "MySQL"],
-    href: "https://github.com/Elli2022/timetjek-app",
-    cta: "Se repo",
-    badge: "Fullstack",
-    previewHighlights: ["Laravel API", "Vue 3", "Tidsposter", "GitHub repo"],
-    preview: {
-      gradient: "linear-gradient(135deg, #101828 0%, #1d4ed8 50%, #34d399 100%)",
+      gradient: "linear-gradient(135deg, #1e1b4b 0%, #5b21b6 48%, #fb7185 100%)",
       surface: "rgba(255, 255, 255, 0.16)",
-      accent: "#dbeafe",
-      highlight: "#bbf7d0",
+      accent: "#ede9fe",
+      highlight: "#fecdd3",
     },
   },
 ];
@@ -274,7 +252,7 @@ export default function Home() {
 
             <div className="reveal grid gap-3 sm:grid-cols-3" style={{ animationDelay: "220ms" }}>
               {[
-                { value: "4", label: "Aktuella case" },
+                { value: "3", label: "Aktuella case" },
                 { value: "Svensk", label: "Copy och tonalitet" },
                 { value: "2026", label: "Aktuell stack" },
               ].map((item) => (
@@ -306,8 +284,8 @@ export default function Home() {
             </div>
             <p className="max-w-xl text-base leading-7 text-[color:var(--muted)]">
               Portfolion speglar nu en bredare mix av aktuella projekt:
-              företagswebb, receptplattform, klinikwebb och fullstackapp för
-              tidrapportering. Det gör det lättare att visa både formkänsla och teknisk bredd.
+              företagswebb, receptplattform och webbappen Tidspuls för tid och
+              närvaro. Det gör det lättare att visa både formkänsla och teknisk bredd.
             </p>
           </div>
 
