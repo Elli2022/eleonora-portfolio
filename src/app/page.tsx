@@ -272,7 +272,7 @@ export default function Home() {
             <div className="reveal space-y-5">
               <p className="eyebrow text-xs font-bold">Portfolio 2026</p>
               <h1 className="section-title max-w-4xl text-[clamp(3.2rem,8vw,6.5rem)] font-bold leading-[0.94]">
-                Webbprojekt med tydlig känsla, ren struktur och modern frontend.
+                Webbprojekt med tydlig känsla, affärsfokus och modern frontend.
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)] sm:text-xl">
                 Jag bygger digitala upplevelser som kombinerar visuellt uttryck med
