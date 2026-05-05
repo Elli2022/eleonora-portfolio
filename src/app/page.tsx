@@ -333,7 +333,7 @@ export default function Home() {
 
             <div className="reveal grid gap-3 sm:grid-cols-3" style={{ animationDelay: "220ms" }}>
               {[
-                { value: "6", label: "Aktuella case" },
+                { value: "5", label: "Aktuella case" },
                 { value: "Svensk", label: "Copy och tonalitet" },
                 { value: "2026", label: "Aktuell stack" },
               ].map((item) => (
@@ -371,7 +371,7 @@ export default function Home() {
           </div>
 
           <div className="space-y-8">
-            {projects.map((project, index) => (
+            {projects.filter((project) => project.name !== "Receptbok").map((project, index) => (
               <article
                 key={project.name}
                 className="glass-card reveal grid gap-8 overflow-hidden rounded-[2rem] p-6 lg:grid-cols-[1.08fr_0.92fr] lg:p-8"
