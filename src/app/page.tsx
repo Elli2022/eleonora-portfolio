@@ -106,6 +106,29 @@ const projects: Project[] = [
     },
   },
 
+  {
+    name: "Nordflux eBook",
+    category: "Produkt- och landningssida",
+    summary:
+      "En modern webb för Nordflux eBook med tydlig visuell profil, fokus på konvertering och snabb väg till att utforska innehållet.",
+    impact: [
+      "Lyfter värdet i produkten med tydlig struktur och stark förstasektion",
+      "Designad för att guida besökaren vidare till handling utan friktion",
+      "Deployad live på Netlify med snabb och stabil frontend",
+    ],
+    stack: ["Next.js", "TypeScript", "React", "Netlify"],
+    href: "https://nordflux.netlify.app/",
+    cta: "Öppna livesajt",
+    badge: "Produkt",
+    previewHighlights: ["Landningssida", "Responsiv", "Konvertering", "Live på Netlify"],
+    preview: {
+      gradient: "linear-gradient(135deg, #0b1020 0%, #1d4ed8 52%, #22d3ee 100%)",
+      surface: "rgba(255, 255, 255, 0.16)",
+      accent: "#dbeafe",
+      highlight: "#a5f3fc",
+    },
+  },
+
 ];
 
 const principles = [
@@ -275,7 +298,7 @@ export default function Home() {
 
             <div className="reveal grid gap-3 sm:grid-cols-3" style={{ animationDelay: "220ms" }}>
               {[
-                { value: "4", label: "Aktuella case" },
+                { value: "5", label: "Aktuella case" },
                 { value: "Svensk", label: "Copy och tonalitet" },
                 { value: "2026", label: "Aktuell stack" },
               ].map((item) => (
@@ -307,7 +330,7 @@ export default function Home() {
             </div>
             <p className="max-w-xl text-base leading-7 text-[color:var(--muted)]">
               Portfolion speglar nu en bredare mix av aktuella projekt:
-              företagswebb, receptplattform, Tidspuls och Annas Vardagsglädje AB.
+              företagswebb, receptplattform, Tidspuls, Annas Vardagsglädje AB och Nordflux eBook.
               Det gör det lättare att visa både formkänsla och teknisk bredd.
             </p>
           </div>
