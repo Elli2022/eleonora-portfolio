@@ -142,21 +142,21 @@ const projects: Project[] = [
   },
 
   {
-    name: "Italia Språkstöd Sverige",
-    category: "Informationssajt och stödportal",
+    name: "Italidea",
+    category: "Språktolkning och stöd på italienska",
     summary:
-      "En tydlig och tillgänglig informationssajt för Italia Språkstöd Sverige, med fokus på vägledning, förtroende och enkel kontaktväg för målgruppen.",
+      "En tydlig webb för Italidea med fokus på språktolkning och stöd på italienska, där besökaren snabbt hittar rätt hjälp och kontaktväg.",
     impact: [
-      "Strukturerar information så att besökaren snabbt hittar rätt stöd",
-      "Bygger förtroende genom lugn visuell ton och tydlig copy",
+      "Tydlig tjänstepresentation för besökare som behöver stöd på italienska",
+      "Bygger förtroende med varm tonalitet och tydlig vägledning",
       "Live på Netlify med lösning som är enkel att vidareutveckla",
     ],
     stack: ["Next.js", "TypeScript", "React", "Netlify"],
-    href: "https://italia-sprakstod-sverige.netlify.app/",
+    href: "https://italidea.netlify.app/",
     cta: "Öppna livesajt",
-    repoHref: "https://github.com/Elli2022/Italia-Sprakstod-Sverige",
+    repoHref: "https://github.com/Elli2022/Italidea",
     badge: "Organisation",
-    previewHighlights: ["Stödportal", "Responsiv", "Tydlig information", "Live på Netlify"],
+    previewHighlights: ["Italienska", "Responsiv", "Tydliga tjänster", "Live på Netlify"],
     preview: {
       gradient: "linear-gradient(135deg, #0f172a 0%, #166534 50%, #f59e0b 100%)",
       surface: "rgba(255, 255, 255, 0.16)",
