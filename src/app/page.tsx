@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Portfolio och case",
+  title: "Frilans webbutveckling · referenser",
   description:
-    "Utvalda case för företag och produkter: från strategi och UI till snabb implementation i modern frontend.",
+    "Webb och frontend för företag och organisationer – tydliga leveranser, modern stack och ansvarsfull överlämning.",
 };
 
 type Project = {
@@ -26,73 +26,8 @@ type Project = {
 };
 
 const projects: Project[] = [
-  {
-    name: "W Advokatbyrå",
-    category: "Förtroendedriven företagswebb",
-    summary:
-      "En förtroendeingivande sajt för juridisk rådgivning med premiumkänsla, tydlig struktur och fokus på kontaktvägar.",
-    impact: [
-      "Skapar ett lugnt och professionellt första intryck",
-      "Lyfter fram juridiska tjänster utan att bli tung eller stel",
-      "Byggd för tydlig navigation mellan byrå, tjänster och kontakt",
-    ],
-    stack: ["React", "TypeScript", "Netlify Functions"],
-    href: "https://w-advokatbyra-malmo.netlify.app/",
-    cta: "Öppna livesajt",
-    badge: "Juridik",
-    previewHighlights: ["Affärsjuridik", "Malmö", "Tjänstesidor", "Live på Netlify"],
-    preview: {
-      gradient: "linear-gradient(135deg, #121826 0%, #20345a 55%, #c7a56d 100%)",
-      surface: "rgba(255, 248, 236, 0.14)",
-      accent: "#f4d9a8",
-      highlight: "#d0a85c",
-    },
-  },
-  {
-    name: "Receptbok",
-    category: "Fullstack receptplattform",
-    summary:
-      "En modern receptapp med PWA-stöd, sparade favoriter och möjlighet att koppla frontend mot en befintlig Express- och MongoDB-backend.",
-    impact: [
-      "App-lik upplevelse för att hitta, spara och hantera recept",
-      "Mobilvänlig installation med manifest och service worker",
-      "Frontend i Next.js med stöd för backend-synk vid behov",
-    ],
-    stack: ["Next.js", "TypeScript", "Express", "MongoDB"],
-    href: "https://ellisreceptbok.netlify.app/",
-    cta: "Öppna livesajt",
-    repoHref: "https://github.com/Elli2022/receptbok",
-    badge: "Mat & vardag",
-    previewHighlights: ["PWA", "Responsiv", "Favoriter", "Live på Netlify"],
-    preview: {
-      gradient: "linear-gradient(135deg, #0f766e 0%, #34a853 48%, #f0d69f 100%)",
-      surface: "rgba(255, 255, 255, 0.16)",
-      accent: "#f5f1e8",
-      highlight: "#d8f3c8",
-    },
-  },
-  {
-    name: "Tidspuls",
-    category: "Webbapp för tid och närvaro",
-    summary:
-      "En inloggad webbapp där användare skapar konto, loggar in och jobbar med tid och aktivitet i ett tydligt flöde. Deployad som snabb SPA på Netlify.",
-    impact: [
-      "Registrering och inloggning med fokus på en trygg första upplevelse",
-      "Gränssnitt byggt för att fungera lika bra på mobil som på desktop",
-      "Live-miljö på Netlify med enkel delning av länk till intressenter",
-    ],
-    stack: ["Vue 3", "TypeScript", "Netlify"],
-    href: "https://tidspuls-app.netlify.app/",
-    cta: "Öppna livesajt",
-    badge: "Webbapp",
-    previewHighlights: ["Auth-flöde", "Responsiv", "Tid i fokus", "Live på Netlify"],
-    preview: {
-      gradient: "linear-gradient(135deg, #1e1b4b 0%, #5b21b6 48%, #fb7185 100%)",
-      surface: "rgba(255, 255, 255, 0.16)",
-      accent: "#ede9fe",
-      highlight: "#fecdd3",
-    },
-  },
+
+
   {
     name: "Annas Vardagsglädje AB",
     category: "Företagswebb för vardagstjänster",
@@ -142,6 +77,76 @@ const projects: Project[] = [
   },
 
   {
+    name: "W Advokatbyrå",
+    category: "Förtroendedriven företagswebb",
+    summary:
+      "En förtroendeingivande sajt för juridisk rådgivning med premiumkänsla, tydlig struktur och fokus på kontaktvägar.",
+    impact: [
+      "Skapar ett lugnt och professionellt första intryck",
+      "Lyfter fram juridiska tjänster utan att bli tung eller stel",
+      "Byggd för tydlig navigation mellan byrå, tjänster och kontakt",
+    ],
+    stack: ["React", "TypeScript", "Netlify Functions"],
+    href: "https://w-advokatbyra-malmo.netlify.app/",
+    cta: "Öppna livesajt",
+    badge: "Juridik",
+    previewHighlights: ["Affärsjuridik", "Malmö", "Tjänstesidor", "Live på Netlify"],
+    preview: {
+      gradient: "linear-gradient(135deg, #121826 0%, #20345a 55%, #c7a56d 100%)",
+      surface: "rgba(255, 248, 236, 0.14)",
+      accent: "#f4d9a8",
+      highlight: "#d0a85c",
+    },
+  },
+
+  {
+    name: "Italidea",
+    category: "Språktolkning och stöd på italienska",
+    summary:
+      "En tydlig webb för Italidea med fokus på språktolkning och stöd på italienska, där besökaren snabbt hittar rätt hjälp och kontaktväg.",
+    impact: [
+      "Tydlig tjänstepresentation för besökare som behöver stöd på italienska",
+      "Bygger förtroende med varm tonalitet och tydlig vägledning",
+      "Live på Netlify med lösning som är enkel att vidareutveckla",
+    ],
+    stack: ["Next.js", "TypeScript", "React", "Netlify"],
+    href: "https://italidea.netlify.app/",
+    cta: "Öppna livesajt",
+    repoHref: "https://github.com/Elli2022/Italidea",
+    badge: "Organisation",
+    previewHighlights: ["Italienska", "Responsiv", "Tydliga tjänster", "Live på Netlify"],
+    preview: {
+      gradient: "linear-gradient(135deg, #0f172a 0%, #166534 50%, #f59e0b 100%)",
+      surface: "rgba(255, 255, 255, 0.16)",
+      accent: "#dcfce7",
+      highlight: "#fde68a",
+    },
+  },
+
+  {
+    name: "Tidspuls",
+    category: "Webbapp för tid och närvaro",
+    summary:
+      "En inloggad webbapp där användare skapar konto, loggar in och jobbar med tid och aktivitet i ett tydligt flöde. Deployad som snabb SPA på Netlify.",
+    impact: [
+      "Registrering och inloggning med fokus på en trygg första upplevelse",
+      "Gränssnitt byggt för att fungera lika bra på mobil som på desktop",
+      "Live-miljö på Netlify med enkel delning av länk till intressenter",
+    ],
+    stack: ["Vue 3", "TypeScript", "Netlify"],
+    href: "https://tidspuls-app.netlify.app/",
+    cta: "Öppna livesajt",
+    badge: "Webbapp",
+    previewHighlights: ["Auth-flöde", "Responsiv", "Tid i fokus", "Live på Netlify"],
+    preview: {
+      gradient: "linear-gradient(135deg, #1e1b4b 0%, #5b21b6 48%, #fb7185 100%)",
+      surface: "rgba(255, 255, 255, 0.16)",
+      accent: "#ede9fe",
+      highlight: "#fecdd3",
+    },
+  },
+
+  {
     name: "Convertor eBook",
     category: "Praktik och moderniserad landningssida",
     summary:
@@ -164,7 +169,6 @@ const projects: Project[] = [
       highlight: "#bbf7d0",
     },
   },
-
 
   {
     name: "Francks Refurbishment",
@@ -213,28 +217,28 @@ const projects: Project[] = [
   },
 
   {
-    name: "Italidea",
-    category: "Språktolkning och stöd på italienska",
+    name: "Receptbok",
+    category: "Fullstack receptplattform",
     summary:
-      "En tydlig webb för Italidea med fokus på språktolkning och stöd på italienska, där besökaren snabbt hittar rätt hjälp och kontaktväg.",
+      "En modern receptapp med PWA-stöd, sparade favoriter och möjlighet att koppla frontend mot en befintlig Express- och MongoDB-backend.",
     impact: [
-      "Tydlig tjänstepresentation för besökare som behöver stöd på italienska",
-      "Bygger förtroende med varm tonalitet och tydlig vägledning",
-      "Live på Netlify med lösning som är enkel att vidareutveckla",
+      "App-lik upplevelse för att hitta, spara och hantera recept",
+      "Mobilvänlig installation med manifest och service worker",
+      "Frontend i Next.js med stöd för backend-synk vid behov",
     ],
-    stack: ["Next.js", "TypeScript", "React", "Netlify"],
-    href: "https://italidea.netlify.app/",
+    stack: ["Next.js", "TypeScript", "Express", "MongoDB"],
+    href: "https://ellisreceptbok.netlify.app/",
     cta: "Öppna livesajt",
-    repoHref: "https://github.com/Elli2022/Italidea",
-    badge: "Organisation",
-    previewHighlights: ["Italienska", "Responsiv", "Tydliga tjänster", "Live på Netlify"],
+    repoHref: "https://github.com/Elli2022/receptbok",
+    badge: "Mat & vardag",
+    previewHighlights: ["PWA", "Responsiv", "Favoriter", "Live på Netlify"],
     preview: {
-      gradient: "linear-gradient(135deg, #0f172a 0%, #166534 50%, #f59e0b 100%)",
+      gradient: "linear-gradient(135deg, #0f766e 0%, #34a853 48%, #f0d69f 100%)",
       surface: "rgba(255, 255, 255, 0.16)",
-      accent: "#dcfce7",
-      highlight: "#fde68a",
+      accent: "#f5f1e8",
+      highlight: "#d8f3c8",
     },
-  },
+  }
 
 ];
 
@@ -377,13 +381,12 @@ export default function Home() {
         <section id="top" className="grid gap-10 pb-20 pt-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:pb-28">
           <div className="space-y-8">
             <div className="reveal space-y-5">
-              <p className="eyebrow text-xs font-bold">Portfolio 2026</p>
+              <p className="eyebrow text-xs font-bold">Frilans · Webb & frontend</p>
               <h1 className="section-title max-w-4xl text-[clamp(3.2rem,8vw,6.5rem)] font-bold leading-[0.94]">
-                Webbprojekt med tydlig känsla, affärsnytta och modern frontend.
+                Webb för företag och organisationer som vill ha tydlig kommunikation, trygg leverans och modern frontend – jag tar ansvar från struktur till launch.
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)] sm:text-xl">
-                Jag hjälper företag att ta fram webbupplevelser där design, innehåll och
-                teknik samverkar för att bygga förtroende och driva rätt handling.
+                Jag tar er från kartläggda behov till en lanserad webb eller webbapp med genomtänkt struktur, vässad frontend och rimliga förväntningar på innehåll och CMS. Efter launch finns plan för överlämning, prestanda och vidare utveckling.
               </p>
             </div>
 
@@ -392,21 +395,21 @@ export default function Home() {
                 href="#projects"
                 className="inline-flex items-center justify-center rounded-full bg-[color:var(--ink)] px-6 py-3.5 text-sm font-semibold text-white transition hover:translate-y-[-1px] hover:bg-black"
               >
-                Se utvalda projekt
+                Se referenser och case
               </a>
               <a
                 href="mailto:eleonora.nocentini@gmail.com"
                 className="inline-flex items-center justify-center rounded-full border border-[color:var(--line)] bg-white/80 px-6 py-3.5 text-sm font-semibold text-[color:var(--ink)] transition hover:border-[color:var(--accent)] hover:bg-white"
               >
-                Kontakta mig
+                Diskutera ert projekt
               </a>
             </div>
 
             <div className="reveal grid gap-3 sm:grid-cols-3" style={{ animationDelay: "220ms" }}>
               {[
-                { value: "8", label: "Aktuella case" },
-                { value: "Svensk", label: "Copy och tonalitet" },
-                { value: "2026", label: "Aktuell stack" },
+                { value: "8", label: "Case i urvalet" },
+                { value: "Paket & offert", label: "Tydliga leveranser" },
+                { value: "Ja", label: "Underhåll & vidare" },
               ].map((item) => (
                 <div key={item.label} className="glass-card rounded-[1.6rem] p-5">
                   <p className="font-display text-3xl font-bold tracking-tight">{item.value}</p>
@@ -435,9 +438,7 @@ export default function Home() {
               </h2>
             </div>
             <p className="max-w-xl text-base leading-7 text-[color:var(--muted)]">
-              Här hittar du uppdrag från företagswebbar till produkt-, app- och
-              informationscase. Gemensamt är tydlig kommunikation, modern
-              frontend och lösningar som är enkla att vidareutveckla när verksamheten växer.
+              När ni utvärderar en leverantör behöver ni se bredd: landningssidor, företagswebbar och webbappar i Next/React, och CMS‑arbete i WordPress där det passar. Märkta praktikcase visar hur jag jobbat i byråmiljö med äkta krav. Jag tar ägarskap för lösningen vi gemensamt landar och kan bygga vidare när ni lanserar nästa steg.
             </p>
           </div>
 
@@ -584,22 +585,21 @@ export default function Home() {
           <div className="glass-card reveal rounded-[2rem] p-8 sm:p-10">
             <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
               <div className="space-y-4">
-                <p className="eyebrow text-xs font-bold">Frilansprofil</p>
+                <p className="eyebrow text-xs font-bold">Samarbete</p>
                 <h2 className="section-title text-4xl font-bold sm:text-5xl">
-                  Så levererar jag i uppdrag från idé till live.
+                  Så jobbar jag med er som kund.
                 </h2>
                 <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
-                  Arbetet drivs med tydlig scope, prioriterade leveranser och tät återkoppling
-                  så att projektet håller både tempo och kvalitet hela vägen till lansering.
+                  Ni får förutsägbar scope, skriftlig offert, avstämda milstolpar och löpande kommunikation – så att leveransen matchar budget, tid och kvalitetskrav hela vägen.
                 </p>
               </div>
 
               <div className="grid gap-4">
                 {[
-                  "Tydlig kickoff med mål, målgrupp och prioriterad leveranslista",
-                  "Design och copy som guidar besökaren mot rätt handling",
-                  "Produktion i modern stack med fokus på prestanda och underhållbar kod",
-                  "Lansering med uppföljning och konkret plan för nästa iteration",
+                  "Kickoff där vi samlar mål, målgrupp, budskap och tekniska förutsättningar",
+                  "Offert och leveranslista med milstoplar – ni vet vad som ingår och när det levereras",
+                  "Produktion med återkommande demos och avstämding innan nästa steg går i produktion",
+                  "Launch med överlämning: dokumentation, intro till drift/innehåll och plan för vidareförvaltning",
                 ].map((item) => (
                   <div
                     key={item}
@@ -619,11 +619,10 @@ export default function Home() {
               <div className="space-y-4">
                 <p className="eyebrow text-xs font-bold">Kontakt</p>
                 <h2 className="section-title text-4xl font-bold sm:text-5xl">
-                  Vill du ha en webb som känns rätt, fungerar snabbt och leder till resultat?
+                  Ny sajt, förnya befintlig eller starta ett konkret uppdrag?
                 </h2>
                 <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
-                  Jag tar fram lösningar som kombinerar stark visuell känsla med tydlig
-                  användarupplevelse och mätbar effekt. Hör av dig om du vill diskutera ett uppdrag.
+                  Maila en kort beskrivning av mål, tid och budgetram – jag återkopplar inom rimlig tid med förslag på nästa steg eller ett första möte. Passar det för er kan vi ta fram scope och offert innan produktion startar.
                 </p>
               </div>
 

@@ -8,16 +8,19 @@ export const metadata: Metadata = {
     template: "%s | Eleonora Nocentini",
   },
   description:
-    "Webbutvecklar-portfolio med skarpa case i Next.js, React och TypeScript. Fokus på tydlig design, snabb frontend och affärsnytta för företag.",
+    "Frilans webbutvecklare med referenser för SMB och organisationer – landningssidor, företagswebbar och frontend i Next.js/React och WordPress där det passar. Tydliga leveranser och överlämning.",
   keywords: [
     "webbutvecklare",
-    "frontend developer",
+    "frilans webbutvecklare",
+    "frontend",
     "Next.js",
     "React",
     "TypeScript",
-    "portfolio",
-    "frilans",
+    "WordPress",
+    "landningssida",
+    "företagswebb",
     "Netlify",
+    "SMB",
   ],
   alternates: {
     canonical: "/",
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "Eleonora Portfolio",
     title: "Eleonora Nocentini Sköldebrink | Webbportfolio",
     description:
-      "Utvalda webbprojekt med tydlig känsla, modern frontend och fokus på resultat.",
+      "Referenser och case: webb för företag och organisationer med tydliga leveranser och modern frontend.",
     images: [
       {
         url: "/opengraph-image",
@@ -43,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Eleonora Nocentini Sköldebrink | Webbportfolio",
     description:
-      "Utvalda webbprojekt med modern frontend och tydligt affärsfokus.",
+      "Frilans webbutveckling med trygga leveranser och fokus på resultat.",
     images: ["/opengraph-image"],
   },
 };
