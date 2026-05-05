@@ -169,7 +169,7 @@ const projects: Project[] = [
     name: "Sveriges offentliga kockar",
     category: "WordPress och nyhetsflöde under praktik",
     summary:
-      "Under praktik på webbyrån Capace Media i Malmö (november–februari) bidrog jag till WordPress-utveckling och felsökning på sajten, med särskilt fokus på nyhetsdelen och hur innehåll kan publiceras utan friktion.",
+      "Under praktik på webbyrån Capace Media i Malmö (november 2023–februari 2024) bidrog jag till WordPress-utveckling och felsökning på sajten, med särskilt fokus på nyhetsdelen och hur innehåll kan publiceras utan friktion.",
     impact: [
       "Löste tekniska hinder som stoppade marknadsförare och redaktörer från smidiga publiceringsflöden i CMS",
       "Kunde ta vid när senior utvecklare var upptagen med andra kundprojekt",
