@@ -166,6 +166,29 @@ const projects: Project[] = [
   },
 
   {
+    name: "Sveriges offentliga kockar",
+    category: "WordPress och nyhetsflöde under praktik",
+    summary:
+      "Under praktik på webbyrån Capace Media i Malmö (november–februari) bidrog jag till WordPress-utveckling och felsökning på sajten, med särskilt fokus på nyhetsdelen och hur innehåll kan publiceras utan friktion.",
+    impact: [
+      "Löste tekniska hinder som stoppade marknadsförare och redaktörer från smidiga publiceringsflöden i CMS",
+      "Kunde ta vid när senior utvecklare var upptagen med andra kundprojekt",
+      "Bidrog till stabil drift och tydligare arbetsflöden vid uppdateringar av sajten",
+    ],
+    stack: ["WordPress"],
+    href: "https://sverigesoffentligakockar.se/nyheter/",
+    cta: "Öppna nyhetssidan",
+    badge: "Praktik",
+    previewHighlights: ["Capace Media", "Malmö", "WordPress", "Nyheter"],
+    preview: {
+      gradient: "linear-gradient(135deg, #134e4a 0%, #276749 46%, #b7791f 100%)",
+      surface: "rgba(255, 251, 235, 0.14)",
+      accent: "#faf6eb",
+      highlight: "#fcd34d",
+    },
+  },
+
+  {
     name: "Italidea",
     category: "Språktolkning och stöd på italienska",
     summary:
@@ -357,7 +380,7 @@ export default function Home() {
 
             <div className="reveal grid gap-3 sm:grid-cols-3" style={{ animationDelay: "220ms" }}>
               {[
-                { value: "6", label: "Aktuella case" },
+                { value: "7", label: "Aktuella case" },
                 { value: "Svensk", label: "Copy och tonalitet" },
                 { value: "2026", label: "Aktuell stack" },
               ].map((item) => (
