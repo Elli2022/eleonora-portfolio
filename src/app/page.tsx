@@ -407,9 +407,9 @@ export default function Home() {
 
             <div className="reveal grid gap-3 sm:grid-cols-3" style={{ animationDelay: "220ms" }}>
               {[
-                { value: "8", label: "Case i urvalet" },
-                { value: "Paket & offert", label: "Tydliga leveranser" },
-                { value: "Ja", label: "Underhåll & vidare" },
+                { value: "8", label: "Case ni kan granska" },
+                { value: "1–2 v", label: "Återkoppling på förfrågan" },
+                { value: "Next + WP", label: "Typ av leveranser" },
               ].map((item) => (
                 <div key={item.label} className="glass-card rounded-[1.6rem] p-5">
                   <p className="font-display text-3xl font-bold tracking-tight">{item.value}</p>
