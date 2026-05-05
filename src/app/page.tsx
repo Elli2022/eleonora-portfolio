@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Portfolio och case",
+  description:
+    "Utvalda case för företag och produkter: från strategi och UI till snabb implementation i modern frontend.",
+};
+
 type Project = {
   name: string;
   category: string;
@@ -6,6 +14,7 @@ type Project = {
   stack: string[];
   href: string;
   cta: string;
+  repoHref?: string;
   badge: string;
   previewHighlights: string[];
   preview: {
@@ -52,6 +61,7 @@ const projects: Project[] = [
     stack: ["Next.js", "TypeScript", "Express", "MongoDB"],
     href: "https://ellisreceptbok.netlify.app/",
     cta: "Öppna livesajt",
+    repoHref: "https://github.com/Elli2022/receptbok",
     badge: "Mat & vardag",
     previewHighlights: ["PWA", "Responsiv", "Favoriter", "Live på Netlify"],
     preview: {
@@ -96,6 +106,7 @@ const projects: Project[] = [
     stack: ["Next.js", "TypeScript", "React"],
     href: "https://annas-vardagsgladje-ab.netlify.app/",
     cta: "Öppna livesajt",
+    repoHref: "https://github.com/Elli2022/annas-vardagsgladje-ab",
     badge: "Företag",
     previewHighlights: ["Företagsprofil", "Responsiv", "Tydlig struktur", "Live på Netlify"],
     preview: {
@@ -119,6 +130,7 @@ const projects: Project[] = [
     stack: ["Next.js", "TypeScript", "React", "Netlify"],
     href: "https://nordflux.netlify.app/",
     cta: "Öppna livesajt",
+    repoHref: "https://github.com/Elli2022/nordflux-ebook",
     badge: "Produkt",
     previewHighlights: ["Landningssida", "Responsiv", "Konvertering", "Live på Netlify"],
     preview: {
@@ -389,15 +401,28 @@ export default function Home() {
                         </div>
                       </div>
 
-                      <a
-                        href={project.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full bg-[color:var(--ink)] px-5 py-3 text-sm font-semibold text-white transition hover:translate-y-[-1px] hover:bg-black"
-                      >
-                        {project.cta}
-                        <ExternalIcon />
-                      </a>
+                      <div className="flex flex-wrap items-center gap-3">
+                        <a
+                          href={project.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-2 rounded-full bg-[color:var(--ink)] px-5 py-3 text-sm font-semibold text-white transition hover:translate-y-[-1px] hover:bg-black"
+                        >
+                          {project.cta}
+                          <ExternalIcon />
+                        </a>
+                        {project.repoHref ? (
+                          <a
+                            href={project.repoHref}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-2 rounded-full border border-[color:var(--line)] bg-white/75 px-5 py-3 text-sm font-semibold text-[color:var(--ink)] transition hover:border-[color:var(--accent)] hover:bg-white"
+                          >
+                            Se repo
+                            <ExternalIcon />
+                          </a>
+                        ) : null}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -458,6 +483,41 @@ export default function Home() {
                 ))}
               </div>
             </aside>
+          </div>
+        </section>
+
+
+        <section className="pb-16 lg:pb-20">
+          <div className="glass-card reveal rounded-[2rem] p-8 sm:p-10">
+            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+              <div className="space-y-4">
+                <p className="eyebrow text-xs font-bold">Frilansprofil</p>
+                <h2 className="section-title text-4xl font-bold sm:text-5xl">
+                  Så levererar jag i uppdrag från idé till live.
+                </h2>
+                <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
+                  Jag jobbar strukturerat med scope, designbeslut och implementation så att
+                  du får en tydlig process, tät återkoppling och en lösning som går att
+                  vidareutveckla över tid.
+                </p>
+              </div>
+
+              <div className="grid gap-4">
+                {[
+                  "Tydlig kickoff med mål, målgrupp och prioriterad leveranslista",
+                  "Design och copy som guidar besökaren mot rätt handling",
+                  "Produktion i modern stack med fokus på prestanda och underhållbar kod",
+                  "Lansering med uppföljning och konkret plan för nästa iteration",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-[color:var(--line)] bg-white/70 px-5 py-4 text-base leading-7"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
