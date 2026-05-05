@@ -165,6 +165,30 @@ const projects: Project[] = [
     },
   },
 
+
+  {
+    name: "Francks Refurbishment",
+    category: "Flerspråkig WordPress-webb under praktik",
+    summary:
+      "Under praktik hos Convertor Svenska AB (februari 2024–maj 2025) bidrog jag till Francks Refurbishments webbplats innan lansering i stagingmiljö: uppdatering av textinnehåll, uppbyggnad och justering av moduler i WordPress samt arbete med både den svenska och danska sidan.",
+    impact: [
+      "Byggde och finjusterade WordPress-moduler för mer återanvändbara och lättarbetade ytor i CMS",
+      "Strukturerade och skärpte copy så budskapet blev konsekvent inför staging och vidare test",
+      "Såg till att svensk och dansk version höll ihop i struktur och innehåll under förberedelserna",
+    ],
+    stack: ["WordPress"],
+    href: "https://francksref.com/",
+    cta: "Öppna livesajt",
+    badge: "Praktik",
+    previewHighlights: ["Convertor", "SV & DK", "WordPress", "Staging-ready"],
+    preview: {
+      gradient: "linear-gradient(135deg, #0c1929 0%, #155e75 48%, #d4a574 100%)",
+      surface: "rgba(255, 252, 245, 0.14)",
+      accent: "#e0f2f1",
+      highlight: "#fcd9a5",
+    },
+  },
+
   {
     name: "Sveriges offentliga kockar",
     category: "WordPress och nyhetsflöde under praktik",
@@ -380,7 +404,7 @@ export default function Home() {
 
             <div className="reveal grid gap-3 sm:grid-cols-3" style={{ animationDelay: "220ms" }}>
               {[
-                { value: "7", label: "Aktuella case" },
+                { value: "8", label: "Aktuella case" },
                 { value: "Svensk", label: "Copy och tonalitet" },
                 { value: "2026", label: "Aktuell stack" },
               ].map((item) => (
