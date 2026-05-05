@@ -83,6 +83,29 @@ const projects: Project[] = [
       highlight: "#fecdd3",
     },
   },
+  {
+    name: "Annas Vardagsglädje AB",
+    category: "Företagswebb för vardagstjänster",
+    summary:
+      "En modern företagswebb för Annas Vardagsglädje AB med tydlig struktur, varm tonalitet och fokus på att snabbt förstå erbjudandet.",
+    impact: [
+      "Tydlig presentation av tjänster och målgrupp direkt på startsidan",
+      "Lätt att navigera vidare till kontakt och nästa steg",
+      "Kodbas i Next.js som är enkel att bygga vidare på",
+    ],
+    stack: ["Next.js", "TypeScript", "React"],
+    href: "https://github.com/Elli2022/annas-vardagsgladje-ab",
+    cta: "Se repo",
+    badge: "Företag",
+    previewHighlights: ["Företagsprofil", "Responsiv", "Tydlig struktur", "GitHub repo"],
+    preview: {
+      gradient: "linear-gradient(135deg, #1f2937 0%, #7c3aed 52%, #f59e0b 100%)",
+      surface: "rgba(255, 255, 255, 0.16)",
+      accent: "#ede9fe",
+      highlight: "#fde68a",
+    },
+  },
+
 ];
 
 const principles = [
@@ -252,7 +275,7 @@ export default function Home() {
 
             <div className="reveal grid gap-3 sm:grid-cols-3" style={{ animationDelay: "220ms" }}>
               {[
-                { value: "3", label: "Aktuella case" },
+                { value: "4", label: "Aktuella case" },
                 { value: "Svensk", label: "Copy och tonalitet" },
                 { value: "2026", label: "Aktuell stack" },
               ].map((item) => (
@@ -284,8 +307,8 @@ export default function Home() {
             </div>
             <p className="max-w-xl text-base leading-7 text-[color:var(--muted)]">
               Portfolion speglar nu en bredare mix av aktuella projekt:
-              företagswebb, receptplattform och webbappen Tidspuls för tid och
-              närvaro. Det gör det lättare att visa både formkänsla och teknisk bredd.
+              företagswebb, receptplattform, Tidspuls och Annas Vardagsglädje AB.
+              Det gör det lättare att visa både formkänsla och teknisk bredd.
             </p>
           </div>
 
