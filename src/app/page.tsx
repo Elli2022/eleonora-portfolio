@@ -94,10 +94,10 @@ const projects: Project[] = [
       "Kodbas i Next.js som är enkel att bygga vidare på",
     ],
     stack: ["Next.js", "TypeScript", "React"],
-    href: "https://github.com/Elli2022/annas-vardagsgladje-ab",
-    cta: "Se repo",
+    href: "https://annas-vardagsgladje-ab.netlify.app/",
+    cta: "Öppna livesajt",
     badge: "Företag",
-    previewHighlights: ["Företagsprofil", "Responsiv", "Tydlig struktur", "GitHub repo"],
+    previewHighlights: ["Företagsprofil", "Responsiv", "Tydlig struktur", "Live på Netlify"],
     preview: {
       gradient: "linear-gradient(135deg, #1f2937 0%, #7c3aed 52%, #f59e0b 100%)",
       surface: "rgba(255, 255, 255, 0.16)",
