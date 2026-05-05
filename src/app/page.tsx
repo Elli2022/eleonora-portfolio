@@ -143,20 +143,20 @@ const projects: Project[] = [
 
   {
     name: "Convertor eBook",
-    category: "Moderniserad landningssida",
+    category: "Praktik och moderniserad landningssida",
     summary:
-      "Uppdrag från Convertor (april 2024) att modernisera landningssidan för deras eBook-erbjudande med tydligare struktur, fräschare uttryck och smidigare väg för besökaren.",
+      "Under praktik hos Convertor Svenska AB (april 2024) arbetade jag med att modernisera landningssidan för deras eBook-erbjudande: tydligare struktur, fräschare uttryck och en smidigare väg för besökaren.",
     impact: [
-      "Uppdaterad presentation som matchar en aktuell produktprofil",
-      "Tydligare informationshierarki och mer lättläst flöde på sidan",
+      "Arbete i verklig kontext med krav från produkt och kommunikation",
+      "Uppdaterad presentation med tydligare informationshierarki och lättläst flöde",
       "Frontend som är enkel att vidareutveckla när budskap eller kampanjer ändras",
     ],
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "React", "Netlify"],
     href: "https://convertor-e-book.netlify.app/",
     cta: "Öppna livesajt",
     repoHref: "https://github.com/Elli2022/convertor-e-book",
-    badge: "Uppdrag",
-    previewHighlights: ["Landningssida", "April 2024", "Modern frontend", "Live på Netlify"],
+    badge: "Praktik",
+    previewHighlights: ["Convertor Svenska AB", "April 2024", "Landningssida", "Live på Netlify"],
     preview: {
       gradient: "linear-gradient(135deg, #111827 0%, #0f766e 48%, #22c55e 100%)",
       surface: "rgba(255, 255, 255, 0.14)",
