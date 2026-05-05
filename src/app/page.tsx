@@ -341,9 +341,9 @@ export default function Home() {
               </h2>
             </div>
             <p className="max-w-xl text-base leading-7 text-[color:var(--muted)]">
-              Portfolion speglar nu en bredare mix av aktuella projekt:
-              företagswebb, receptplattform, Tidspuls, Annas Vardagsglädje AB och Nordflux eBook.
-              Det gör det lättare att visa både formkänsla och teknisk bredd.
+              Här hittar du projekt från flera typer av uppdrag - från företagswebbar till
+              produkt- och appcase. Fokus i varje leverans är tydlig kommunikation,
+              modern frontend och en lösning som är enkel att vidareutveckla.
             </p>
           </div>
 
