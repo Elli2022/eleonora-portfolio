@@ -287,9 +287,8 @@ export default function Home() {
                 Webbprojekt med tydlig känsla, affärsfokus och modern frontend.
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)] sm:text-xl">
-                Jag bygger digitala upplevelser som kombinerar visuellt uttryck med
-                tydlighet, tempo och användbarhet. Här samlar jag projekt som visar
-                hur form, innehåll och kod får jobba ihop.
+                Jag hjälper företag att skapa webbupplevelser där design, innehåll och
+                teknik samverkar för att guida besökaren mot rätt nästa steg.
               </p>
             </div>
 
@@ -337,7 +336,7 @@ export default function Home() {
             <div className="space-y-3">
               <p className="eyebrow text-xs font-bold">Utvalda projekt</p>
               <h2 className="section-title text-4xl font-bold sm:text-5xl">
-                Case som visar bredden i det jag bygger.
+                Utvalda case med tydligt affärsfokus.
               </h2>
             </div>
             <p className="max-w-xl text-base leading-7 text-[color:var(--muted)]">
@@ -439,7 +438,7 @@ export default function Home() {
           <div className="reveal mb-10 space-y-3">
             <p className="eyebrow text-xs font-bold">Arbetssätt</p>
             <h2 className="section-title text-4xl font-bold sm:text-5xl">
-              Jag vill att en sajt ska kännas lika tydlig som den ser bra ut.
+              Tydlig riktning från första intryck till nästa steg.
             </h2>
           </div>
 
@@ -465,12 +464,11 @@ export default function Home() {
             <aside className="glass-card reveal rounded-[1.9rem] p-6" style={{ animationDelay: "180ms" }}>
               <p className="eyebrow text-xs font-bold">Aktuell stack</p>
               <h3 className="section-title mt-3 text-3xl font-bold">
-                Byggd i en modern stack som passar Netlify idag.
+                Modern och stabil stack för snabb leverans.
               </h3>
               <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
-                Den här portfolion är uppsatt för snabb utveckling, enkel vidarebyggnad
-                och smidig deploy. Den går att fortsätta fylla på utan att du behöver
-                börja om från början när fler projekt ska in.
+                Teknikvalen är gjorda för snabb utveckling, trygg deploy och enkel
+                vidareutveckling när nya behov uppstår.
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {stack.map((item) => (
@@ -496,9 +494,8 @@ export default function Home() {
                   Så levererar jag i uppdrag från idé till live.
                 </h2>
                 <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
-                  Jag jobbar strukturerat med scope, designbeslut och implementation så att
-                  du får en tydlig process, tät återkoppling och en lösning som går att
-                  vidareutveckla över tid.
+                  Arbetet drivs med tydlig scope, prioriterade leveranser och tät återkoppling
+                  så att projektet håller både tempo och kvalitet från start till lansering.
                 </p>
               </div>
 
@@ -527,11 +524,11 @@ export default function Home() {
               <div className="space-y-4">
                 <p className="eyebrow text-xs font-bold">Kontakt</p>
                 <h2 className="section-title text-4xl font-bold sm:text-5xl">
-                  Vill du att nästa projekt också ska kännas genomarbetat?
+                  Vill du ha en webb som både känns och fungerar rätt?
                 </h2>
                 <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
-                  Jag tar gärna fram sajter som kombinerar estetik, tydlighet och
-                  användarvänlig frontend. Hör av dig om du vill samarbeta eller se fler case.
+                  Jag tar fram lösningar som kombinerar stark visuell känsla med tydlig
+                  användarupplevelse. Hör av dig om du vill diskutera ett uppdrag.
                 </p>
               </div>
 
