@@ -141,6 +141,30 @@ const projects: Project[] = [
     },
   },
 
+  {
+    name: "Italia Språkstöd Sverige",
+    category: "Informationssajt och stödportal",
+    summary:
+      "En tydlig och tillgänglig informationssajt för Italia Språkstöd Sverige, med fokus på vägledning, förtroende och enkel kontaktväg för målgruppen.",
+    impact: [
+      "Strukturerar information så att besökaren snabbt hittar rätt stöd",
+      "Bygger förtroende genom lugn visuell ton och tydlig copy",
+      "Live på Netlify med lösning som är enkel att vidareutveckla",
+    ],
+    stack: ["Next.js", "TypeScript", "React", "Netlify"],
+    href: "https://italia-sprakstod-sverige.netlify.app/",
+    cta: "Öppna livesajt",
+    repoHref: "https://github.com/Elli2022/Italia-Sprakstod-Sverige",
+    badge: "Organisation",
+    previewHighlights: ["Stödportal", "Responsiv", "Tydlig information", "Live på Netlify"],
+    preview: {
+      gradient: "linear-gradient(135deg, #0f172a 0%, #166534 50%, #f59e0b 100%)",
+      surface: "rgba(255, 255, 255, 0.16)",
+      accent: "#dcfce7",
+      highlight: "#fde68a",
+    },
+  },
+
 ];
 
 const principles = [
@@ -309,7 +333,7 @@ export default function Home() {
 
             <div className="reveal grid gap-3 sm:grid-cols-3" style={{ animationDelay: "220ms" }}>
               {[
-                { value: "5", label: "Aktuella case" },
+                { value: "6", label: "Aktuella case" },
                 { value: "Svensk", label: "Copy och tonalitet" },
                 { value: "2026", label: "Aktuell stack" },
               ].map((item) => (
@@ -340,9 +364,9 @@ export default function Home() {
               </h2>
             </div>
             <p className="max-w-xl text-base leading-7 text-[color:var(--muted)]">
-              Här hittar du uppdrag från företagswebbar till produkt- och appcase.
-              Gemensamt är tydlig kommunikation, modern frontend och lösningar
-              som är enkla att vidareutveckla när verksamheten växer.
+              Här hittar du uppdrag från företagswebbar till produkt-, app- och
+              informationscase. Gemensamt är tydlig kommunikation, modern
+              frontend och lösningar som är enkla att vidareutveckla när verksamheten växer.
             </p>
           </div>
 
