@@ -142,6 +142,30 @@ const projects: Project[] = [
   },
 
   {
+    name: "Convertor eBook",
+    category: "Moderniserad landningssida",
+    summary:
+      "Uppdrag från Convertor (april 2024) att modernisera landningssidan för deras eBook-erbjudande med tydligare struktur, fräschare uttryck och smidigare väg för besökaren.",
+    impact: [
+      "Uppdaterad presentation som matchar en aktuell produktprofil",
+      "Tydligare informationshierarki och mer lättläst flöde på sidan",
+      "Frontend som är enkel att vidareutveckla när budskap eller kampanjer ändras",
+    ],
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "React", "Netlify"],
+    href: "https://convertor-e-book.netlify.app/",
+    cta: "Öppna livesajt",
+    repoHref: "https://github.com/Elli2022/convertor-e-book",
+    badge: "Uppdrag",
+    previewHighlights: ["Landningssida", "April 2024", "Modern frontend", "Live på Netlify"],
+    preview: {
+      gradient: "linear-gradient(135deg, #111827 0%, #0f766e 48%, #22c55e 100%)",
+      surface: "rgba(255, 255, 255, 0.14)",
+      accent: "#d1fae5",
+      highlight: "#bbf7d0",
+    },
+  },
+
+  {
     name: "Italidea",
     category: "Språktolkning och stöd på italienska",
     summary:
@@ -333,7 +357,7 @@ export default function Home() {
 
             <div className="reveal grid gap-3 sm:grid-cols-3" style={{ animationDelay: "220ms" }}>
               {[
-                { value: "5", label: "Aktuella case" },
+                { value: "6", label: "Aktuella case" },
                 { value: "Svensk", label: "Copy och tonalitet" },
                 { value: "2026", label: "Aktuell stack" },
               ].map((item) => (
