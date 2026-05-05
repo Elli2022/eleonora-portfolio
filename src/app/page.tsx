@@ -284,11 +284,11 @@ export default function Home() {
             <div className="reveal space-y-5">
               <p className="eyebrow text-xs font-bold">Portfolio 2026</p>
               <h1 className="section-title max-w-4xl text-[clamp(3.2rem,8vw,6.5rem)] font-bold leading-[0.94]">
-                Webbprojekt med tydlig känsla, affärsfokus och modern frontend.
+                Webbprojekt med tydlig känsla, affärsnytta och modern frontend.
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)] sm:text-xl">
-                Jag hjälper företag att skapa webbupplevelser där design, innehåll och
-                teknik samverkar för att guida besökaren mot rätt nästa steg.
+                Jag hjälper företag att ta fram webbupplevelser där design, innehåll och
+                teknik samverkar för att bygga förtroende och driva rätt handling.
               </p>
             </div>
 
@@ -336,13 +336,13 @@ export default function Home() {
             <div className="space-y-3">
               <p className="eyebrow text-xs font-bold">Utvalda projekt</p>
               <h2 className="section-title text-4xl font-bold sm:text-5xl">
-                Utvalda case med tydligt affärsfokus.
+                Utvalda case med tydlig riktning och affärsnytta.
               </h2>
             </div>
             <p className="max-w-xl text-base leading-7 text-[color:var(--muted)]">
-              Här hittar du projekt från flera typer av uppdrag - från företagswebbar till
-              produkt- och appcase. Fokus i varje leverans är tydlig kommunikation,
-              modern frontend och en lösning som är enkel att vidareutveckla.
+              Här hittar du uppdrag från företagswebbar till produkt- och appcase.
+              Gemensamt är tydlig kommunikation, modern frontend och lösningar
+              som är enkla att vidareutveckla när verksamheten växer.
             </p>
           </div>
 
@@ -438,7 +438,7 @@ export default function Home() {
           <div className="reveal mb-10 space-y-3">
             <p className="eyebrow text-xs font-bold">Arbetssätt</p>
             <h2 className="section-title text-4xl font-bold sm:text-5xl">
-              Tydlig riktning från första intryck till nästa steg.
+              Tydlig riktning från första intryck till rätt nästa steg.
             </h2>
           </div>
 
@@ -464,7 +464,7 @@ export default function Home() {
             <aside className="glass-card reveal rounded-[1.9rem] p-6" style={{ animationDelay: "180ms" }}>
               <p className="eyebrow text-xs font-bold">Aktuell stack</p>
               <h3 className="section-title mt-3 text-3xl font-bold">
-                Modern och stabil stack för snabb leverans.
+                Modern och stabil stack för snabb, trygg leverans.
               </h3>
               <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
                 Teknikvalen är gjorda för snabb utveckling, trygg deploy och enkel
@@ -495,7 +495,7 @@ export default function Home() {
                 </h2>
                 <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
                   Arbetet drivs med tydlig scope, prioriterade leveranser och tät återkoppling
-                  så att projektet håller både tempo och kvalitet från start till lansering.
+                  så att projektet håller både tempo och kvalitet hela vägen till lansering.
                 </p>
               </div>
 
@@ -524,11 +524,11 @@ export default function Home() {
               <div className="space-y-4">
                 <p className="eyebrow text-xs font-bold">Kontakt</p>
                 <h2 className="section-title text-4xl font-bold sm:text-5xl">
-                  Vill du ha en webb som både känns och fungerar rätt?
+                  Vill du ha en webb som känns rätt, fungerar snabbt och leder till resultat?
                 </h2>
                 <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
                   Jag tar fram lösningar som kombinerar stark visuell känsla med tydlig
-                  användarupplevelse. Hör av dig om du vill diskutera ett uppdrag.
+                  användarupplevelse och mätbar effekt. Hör av dig om du vill diskutera ett uppdrag.
                 </p>
               </div>
 
