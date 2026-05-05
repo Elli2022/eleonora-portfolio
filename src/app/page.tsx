@@ -170,7 +170,7 @@ const projects: Project[] = [
     name: "Francks Refurbishment",
     category: "Flerspråkig WordPress-webb under praktik",
     summary:
-      "Under praktik hos Convertor Svenska AB (februari 2024–maj 2025) bidrog jag till Francks Refurbishments webbplats innan lansering i stagingmiljö: uppdatering av textinnehåll, uppbyggnad och justering av moduler i WordPress samt arbete med både den svenska och danska sidan.",
+      "Under praktik hos Convertor Svenska AB (februari–maj 2024) bidrog jag till Francks Refurbishments webbplats innan lansering i stagingmiljö: uppdatering av textinnehåll, uppbyggnad och justering av moduler i WordPress samt arbete med både den svenska och danska sidan.",
     impact: [
       "Byggde och finjusterade WordPress-moduler för mer återanvändbara och lättarbetade ytor i CMS",
       "Strukturerade och skärpte copy så budskapet blev konsekvent inför staging och vidare test",
