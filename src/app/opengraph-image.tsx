@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
+export const dynamic = "force-static";
 export const size = {
   width: 1200,
   height: 630,
@@ -30,7 +30,15 @@ export default function OpengraphImage() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          <div style={{ fontSize: 68, fontWeight: 700, lineHeight: 1.08 }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              fontSize: 68,
+              fontWeight: 700,
+              lineHeight: 1.08,
+            }}
+          >
             Eleonora Nocentini
             <br />
             Sköldebrink
