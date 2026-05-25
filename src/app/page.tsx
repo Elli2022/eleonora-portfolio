@@ -148,6 +148,30 @@ const projects: Project[] = [
     },
   },
 
+
+  {
+    name: "Äventyrsparken",
+    category: "Pedagogiska webbspel för barn 5–7 år",
+    summary:
+      "En lekfull spelhubb med två minispel – Färgfångaren och Djurpare – byggd för små barn med stora knappar, tydlig feedback och låg stress. React/Vite-app med PWA-stöd, ljud via Web Audio API och animationer med Framer Motion.",
+    impact: [
+      "Färgfångaren: slumpmässiga färgval, streak och stjärnor med omedelbar visuell/auditiv feedback",
+      "Djurpare: memory med 12 kort, match-logik och vinstflöde utan tidspress",
+      "Tillgänglig UX: ljud av/på, porträttläge i PWA-manifest och touchvänliga komponenter",
+    ],
+    stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "PWA"],
+    href: "https://avantrysparken.netlify.app/",
+    cta: "Öppna livesajt",
+    badge: "Spel",
+    previewHighlights: ["Barn 5–7 år", "2 minispel", "Web Audio", "PWA"],
+    preview: {
+      gradient: "linear-gradient(135deg, #7c3aed 0%, #f97316 48%, #fde047 100%)",
+      surface: "rgba(255, 255, 255, 0.16)",
+      accent: "#fef3c7",
+      highlight: "#fde68a",
+    },
+  },
+
   {
     name: "W Advokatbyrå",
     category: "Förtroendedriven företagswebb",
@@ -479,7 +503,7 @@ export default function Home() {
 
             <div className="reveal grid gap-3 sm:grid-cols-3" style={{ animationDelay: "220ms" }}>
               {[
-                { value: "11", label: "Case ni kan granska" },
+                { value: "12", label: "Case ni kan granska" },
                 { value: "1–2 v", label: "Återkoppling på förfrågan" },
                 { value: "Next + WP", label: "Typ av leveranser" },
               ].map((item) => (
