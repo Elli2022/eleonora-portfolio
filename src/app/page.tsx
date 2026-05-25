@@ -76,6 +76,79 @@ const projects: Project[] = [
     },
   },
 
+
+  {
+    name: "Community Auth Forum",
+    category: "Socialt forum med auth och API (pågående)",
+    summary:
+      "Ett pågående fullstack‑forum där användare registrerar sig, loggar in med JWT och får ett flöde med nyheter, inlägg med bilder, gilla‑ och kommentarsfunktion, vänner och profiler – inklusive återställning av lösenord. Node/Express/TypeScript‑API på Netlify Functions med PostgreSQL (Neon) och en statisk SPA med hash‑routing.",
+    impact: [
+      "Säker inloggning med JWT, bcrypt och skydd via sanitize-html samt helmet mot vanliga webbrisker",
+      "PostgreSQL med migrationer och tydlig datamodell för användare, inlägg och relationer",
+      "Serverless API‑arkitektur på Netlify Functions som skalar utan egen serverdrift",
+    ],
+    stack: ["Node.js", "Express", "TypeScript", "PostgreSQL", "JWT", "Netlify Functions"],
+    href: "https://community-auth-forum.netlify.app/",
+    cta: "Öppna livesajt",
+    repoHref: "https://github.com/Elli2022/community-auth-forum",
+    badge: "Pågår",
+    previewHighlights: ["Auth & JWT", "PostgreSQL", "Flöde & vänner", "Netlify API"],
+    preview: {
+      gradient: "linear-gradient(135deg, #1e1b4b 0%, #6d28d9 48%, #c084fc 100%)",
+      surface: "rgba(255, 255, 255, 0.14)",
+      accent: "#e9d5ff",
+      highlight: "#a78bfa",
+    },
+  },
+
+  {
+    name: "Färjeankomster Sverige",
+    category: "Live-data-app (Expo web + mobil)",
+    summary:
+      "App för passagerarfärjans ankomster i Ystad, Trelleborg och Helsingborg. Hämtar och tolkar offentliga MyShipTracking‑sidor via r.jina.ai‑proxy utan betald AIS‑API, med kalenderval för dag, deduplicering av ETA mot bekräftade ankomster och automatisk uppdatering.",
+    impact: [
+      "Parser som sammanför flera datakällor per hamn och håller listan konsekvent över tid",
+      "CORS‑lösning med textproxy så att live‑data kan visas i webben utan backend‑nyckel",
+      "Statuslogik för ankommen, planerad och försenad samt flikar för tydlig överblick i flödet",
+    ],
+    stack: ["Expo", "React Native", "TypeScript", "React Native Web", "Netlify"],
+    href: "https://ferry-arrivals-sweden-elli.netlify.app/",
+    cta: "Öppna livesajt",
+    repoHref: "https://github.com/Elli2022/ferry-arrivals-sweden",
+    badge: "Webbapp",
+    previewHighlights: ["Live-data", "3 hamnar", "Parser", "Auto-uppdatering"],
+    preview: {
+      gradient: "linear-gradient(135deg, #0c1929 0%, #0e7490 52%, #2dd4bf 100%)",
+      surface: "rgba(255, 255, 255, 0.14)",
+      accent: "#a5f3fc",
+      highlight: "#5eead4",
+    },
+  },
+
+  {
+    name: "Europatipset Optimizer",
+    category: "Streamlit-app för data och spelförslag",
+    summary:
+      "Python/Streamlit‑stöd för Europatipset: historiska odds, scikit‑learn‑kalibreringsmodell för 1X2, synk mot officiell kupong i Svenska Spel‑kontext, systemförslag under radbudget, backtest och speldagbok. Driftsatt på Streamlit Cloud.",
+    impact: [
+      "ML‑kalibrering av sannolikheter med backtest för att bedöma modellens träffsäkerhet över tid",
+      "API‑synk från football-data.org och berikning av kupongdata för aktuella omgångar",
+      "Pytest‑testsuite som säkrar kärnlogik för odds, modell och spelförslag",
+    ],
+    stack: ["Python", "Streamlit", "pandas", "scikit-learn", "pytest"],
+    href: "https://europatipset-optimizer.streamlit.app/",
+    cta: "Öppna livesajt",
+    repoHref: "https://github.com/Elli2022/europatipset-optimizer",
+    badge: "Data",
+    previewHighlights: ["ML-kalibrering", "Backtest", "Svenska Spel", "Streamlit Cloud"],
+    preview: {
+      gradient: "linear-gradient(135deg, #052e16 0%, #14532d 45%, #ca8a04 100%)",
+      surface: "rgba(255, 255, 255, 0.12)",
+      accent: "#fef08a",
+      highlight: "#facc15",
+    },
+  },
+
   {
     name: "W Advokatbyrå",
     category: "Förtroendedriven företagswebb",
@@ -407,7 +480,7 @@ export default function Home() {
 
             <div className="reveal grid gap-3 sm:grid-cols-3" style={{ animationDelay: "220ms" }}>
               {[
-                { value: "8", label: "Case ni kan granska" },
+                { value: "11", label: "Case ni kan granska" },
                 { value: "1–2 v", label: "Återkoppling på förfrågan" },
                 { value: "Next + WP", label: "Typ av leveranser" },
               ].map((item) => (
@@ -438,7 +511,7 @@ export default function Home() {
               </h2>
             </div>
             <p className="max-w-xl text-base leading-7 text-[color:var(--muted)]">
-              När ni utvärderar en leverantör behöver ni se bredd: landningssidor, företagswebbar och webbappar i Next/React, och CMS‑arbete i WordPress där det passar. Märkta praktikcase visar hur jag jobbat i byråmiljö med äkta krav. Jag tar ägarskap för lösningen vi gemensamt landar och kan bygga vidare när ni lanserar nästa steg.
+              När ni utvärderar en leverantör behöver ni se bredd: landningssidor, företagswebbar, webbappar i Next/React, API‑driven backend, live‑data‑ och mobilappar samt dataverktyg – och CMS‑arbete i WordPress där det passar. Märkta praktikcase visar hur jag jobbat i byråmiljö med äkta krav. Jag tar ägarskap för lösningen vi gemensamt landar och kan bygga vidare när ni lanserar nästa steg.
             </p>
           </div>
 
