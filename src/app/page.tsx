@@ -53,31 +53,6 @@ const projects: Project[] = [
   },
 
   {
-    name: "Nordflux eBook",
-    category: "Produkt- och landningssida",
-    summary:
-      "En modern webb för Nordflux eBook med tydlig visuell profil, fokus på konvertering och snabb väg till att utforska innehållet.",
-    impact: [
-      "Lyfter värdet i produkten med tydlig struktur och stark förstasektion",
-      "Designad för att guida besökaren vidare till handling utan friktion",
-      "Deployad live på Netlify med snabb och stabil frontend",
-    ],
-    stack: ["Next.js", "TypeScript", "React", "Netlify"],
-    href: "https://nordflux.netlify.app/",
-    cta: "Öppna livesajt",
-    repoHref: "https://github.com/Elli2022/nordflux-ebook",
-    badge: "Produkt",
-    previewHighlights: ["Landningssida", "Responsiv", "Konvertering", "Live på Netlify"],
-    preview: {
-      gradient: "linear-gradient(135deg, #0b1020 0%, #1d4ed8 52%, #22d3ee 100%)",
-      surface: "rgba(255, 255, 255, 0.16)",
-      accent: "#dbeafe",
-      highlight: "#a5f3fc",
-    },
-  },
-
-
-  {
     name: "Community Auth Forum",
     category: "Socialt forum med auth och API (pågående)",
     summary:
@@ -98,6 +73,30 @@ const projects: Project[] = [
       surface: "rgba(255, 255, 255, 0.14)",
       accent: "#e9d5ff",
       highlight: "#a78bfa",
+    },
+  },
+
+  {
+    name: "Nordflux eBook",
+    category: "Produkt- och landningssida",
+    summary:
+      "En modern webb för Nordflux eBook med tydlig visuell profil, fokus på konvertering och snabb väg till att utforska innehållet.",
+    impact: [
+      "Lyfter värdet i produkten med tydlig struktur och stark förstasektion",
+      "Designad för att guida besökaren vidare till handling utan friktion",
+      "Deployad live på Netlify med snabb och stabil frontend",
+    ],
+    stack: ["Next.js", "TypeScript", "React", "Netlify"],
+    href: "https://nordflux.netlify.app/",
+    cta: "Öppna livesajt",
+    repoHref: "https://github.com/Elli2022/nordflux-ebook",
+    badge: "Produkt",
+    previewHighlights: ["Landningssida", "Responsiv", "Konvertering", "Live på Netlify"],
+    preview: {
+      gradient: "linear-gradient(135deg, #0b1020 0%, #1d4ed8 52%, #22d3ee 100%)",
+      surface: "rgba(255, 255, 255, 0.16)",
+      accent: "#dbeafe",
+      highlight: "#a5f3fc",
     },
   },
 
