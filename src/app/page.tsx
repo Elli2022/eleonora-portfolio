@@ -29,26 +29,26 @@ const projects: Project[] = [
 
 
   {
-    name: "Annas Vardagsglädje AB",
-    category: "Företagswebb för vardagstjänster",
+    name: "Trygg Vardag Skåne",
+    category: "Företagswebb för omsorg och ledsagning",
     summary:
-      "En modern företagswebb för Annas Vardagsglädje AB med tydlig struktur, varm tonalitet och fokus på att snabbt förstå erbjudandet.",
+      "En varm och tydlig företagswebb för sällskap och ledsagning för äldre i Skåne – med fokus på att förklara tjänsten, bygga förtroende och göra det enkelt att skicka förfrågan via formulär.",
     impact: [
-      "Tydlig presentation av tjänster och målgrupp direkt på startsidan",
-      "Lätt att navigera vidare till kontakt och nästa steg",
-      "Kodbas i Next.js som är enkel att bygga vidare på",
+      "Kontaktformulär via Web3Forms med tydliga fält, spam-skydd och omdirigering till tacksida efter inskick",
+      "SEO med metadata, lokala nyckelord, Open Graph, canonical och struktur som stödjer synlighet i sök",
+      "Tydlig informationsarkitektur från tjänster och verksamhetsområde till kontakt och nästa steg",
     ],
-    stack: ["Next.js", "TypeScript", "React"],
-    href: "https://annas-vardagsgladje-ab.netlify.app/",
+    stack: ["Next.js", "TypeScript", "React", "Tailwind CSS", "Netlify"],
+    href: "https://trygg-vardag-skane.netlify.app/",
     cta: "Öppna livesajt",
-    repoHref: "https://github.com/Elli2022/annas-vardagsgladje-ab",
+    repoHref: "https://github.com/Elli2022/trygg-vardag-portfolio",
     badge: "Företag",
-    previewHighlights: ["Företagsprofil", "Responsiv", "Tydlig struktur", "Live på Netlify"],
+    previewHighlights: ["Kontaktformulär", "Lokal SEO", "Responsiv", "Live på Netlify"],
     preview: {
-      gradient: "linear-gradient(135deg, #1f2937 0%, #7c3aed 52%, #f59e0b 100%)",
-      surface: "rgba(255, 255, 255, 0.16)",
-      accent: "#ede9fe",
-      highlight: "#fde68a",
+      gradient: "linear-gradient(135deg, #3d5a4c 0%, #6b8f71 45%, #e8c4b8 100%)",
+      surface: "rgba(255, 251, 245, 0.16)",
+      accent: "#f0ebe3",
+      highlight: "#f5d0c8",
     },
   },
 
