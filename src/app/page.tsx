@@ -162,6 +162,7 @@ const projects: Project[] = [
     stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "PWA"],
     href: "https://avantrysparken.netlify.app/",
     cta: "Öppna livesajt",
+    repoHref: "https://github.com/Elli2022/avantrysparken",
     badge: "Spel",
     previewHighlights: ["Barn 5–7 år", "2 minispel", "Web Audio", "PWA"],
     preview: {
