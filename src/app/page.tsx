@@ -77,6 +77,29 @@ const projects: Project[] = [
   },
 
   {
+  name: "InboxBridge MVP",
+  category: "AI-pipeline för inkommande e-post",
+  summary:
+    "En MVP som visar ett komplett flöde från inkommande e-post till strukturerad affärsdata: IMAP-ingestion, LLM-bearbetning och synk till partner-API. I dashboarden kan hela kedjan testas direkt med fokus på tydlig pipeline och snabb validering.",
+  impact: [
+    "IMAP-ingestion som hämtar mail och normaliserar innehåll till ett enhetligt schema",
+    "LLM-steg som sammanfattar, extraherar actions och beräknar confidence-score för beslutstöd",
+    "Partner API-sync med strukturerad payload och retry-redo design för robust integration",
+  ],
+  stack: ["TypeScript", "React", "IMAP", "LLM", "REST API", "Netlify"],
+  href: "https://inboxbridge-elli-mvp.netlify.app/",
+  cta: "Öppna livesajt",
+  badge: "AI",
+  previewHighlights: ["IMAP ingestion", "LLM processing", "Partner API", "Pipeline demo"],
+  preview: {
+    gradient: "linear-gradient(135deg, #0f172a 0%, #1d4ed8 48%, #06b6d4 100%)",
+    surface: "rgba(255, 255, 255, 0.14)",
+    accent: "#dbeafe",
+    highlight: "#a5f3fc",
+  },
+},
+
+{
     name: "Nordflux eBook",
     category: "Produkt- och landningssida",
     summary:
@@ -504,7 +527,7 @@ export default function Home() {
 
             <div className="reveal grid gap-3 sm:grid-cols-3" style={{ animationDelay: "220ms" }}>
               {[
-                { value: "12", label: "Case ni kan granska" },
+                { value: "13", label: "Case ni kan granska" },
                 { value: "1–2 v", label: "Återkoppling på förfrågan" },
                 { value: "Next + WP", label: "Typ av leveranser" },
               ].map((item) => (
