@@ -89,6 +89,7 @@ const projects: Project[] = [
   stack: ["TypeScript", "React", "IMAP", "LLM", "REST API", "Netlify"],
   href: "https://inboxbridge-elli-mvp.netlify.app/",
   cta: "Öppna livesajt",
+  repoHref: "https://github.com/Elli2022/portfolio-ai-mvp",
   badge: "AI",
   previewHighlights: ["IMAP ingestion", "LLM processing", "Partner API", "Pipeline demo"],
   preview: {
