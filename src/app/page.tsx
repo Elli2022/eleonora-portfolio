@@ -32,11 +32,11 @@ const projects: Project[] = [
     name: "Trygg Vardag Skåne",
     category: "Företagswebb för omsorg och ledsagning",
     summary:
-      "En varm och tydlig företagswebb för sällskap och ledsagning för äldre i Skåne – med fokus på att förklara tjänsten, bygga förtroende och göra det enkelt att skicka förfrågan via formulär.",
+      "Problem: Besökare hade svårt att snabbt förstå tjänsten och hur de går vidare till kontakt. Lösning: En tydlig informationsarkitektur med lågfriktionsformulär via Web3Forms och genomarbetad SEO (metadata, Open Graph och canonical). Resultat: En mer begriplig kundresa där fler kan gå från första intryck till konkret förfrågan utan onödiga hinder.",
     impact: [
-      "Kontaktformulär via Web3Forms med tydliga fält, spam-skydd och omdirigering till tacksida efter inskick",
-      "SEO med metadata, lokala nyckelord, Open Graph, canonical och struktur som stödjer synlighet i sök",
-      "Tydlig informationsarkitektur från tjänster och verksamhetsområde till kontakt och nästa steg",
+      "Problem: Otydlig tjänstebild och hög tröskel till första kontakt för anhöriga och äldre",
+      "Lösning: Tydlig IA samt kontaktformulär med Web3Forms, relevanta fält, spam-skydd och tacksida efter inskick",
+      "Resultat: Klarare väg från informationssida till förfrågan, stärkt av lokal SEO med metadata, Open Graph och canonical",
     ],
     stack: ["Next.js", "TypeScript", "React", "Tailwind CSS", "Netlify"],
     href: "https://trygg-vardag-skane.netlify.app/",
@@ -56,11 +56,11 @@ const projects: Project[] = [
     name: "Community Auth Forum",
     category: "Socialt forum med auth och API (pågående)",
     summary:
-      "Ett pågående fullstack‑forum där användare registrerar sig, loggar in med JWT och får ett flöde med nyheter, inlägg med bilder, gilla‑ och kommentarsfunktion, vänner och profiler – inklusive återställning av lösenord. Node/Express/TypeScript‑API på Netlify Functions med PostgreSQL (Neon) och en statisk SPA med hash‑routing.",
+      "Problem: Ett socialt forum kräver både säker autentisering och en backend som går att bygga vidare på. Lösning: Node/Express/TypeScript med JWT, bcrypt, sanitize-html och helmet samt PostgreSQL med migrationer, driftsatt som serverless API på Netlify Functions. Resultat: En stabil teknisk grund för att utveckla fler sociala funktioner med bibehållen säkerhet och tydlig driftmodell.",
     impact: [
-      "Säker inloggning med JWT, bcrypt och skydd via sanitize-html samt helmet mot vanliga webbrisker",
-      "PostgreSQL med migrationer och tydlig datamodell för användare, inlägg och relationer",
-      "Serverless API‑arkitektur på Netlify Functions som skalar utan egen serverdrift",
+      "Problem: Social app med höga krav på säker inloggning, dataskydd och hållbar API-struktur",
+      "Lösning: JWT + bcrypt med förstärkt skydd via sanitize-html och helmet, samt PostgreSQL-migrationer för kontrollerad schemautveckling",
+      "Resultat: Robust backendfundament på Netlify Functions som är redo för vidare funktioner utan att låsa till tung serverdrift",
     ],
     stack: ["Node.js", "Express", "TypeScript", "PostgreSQL", "JWT", "Netlify Functions"],
     href: "https://community-auth-forum.netlify.app/",
@@ -80,11 +80,11 @@ const projects: Project[] = [
   name: "InboxBridge MVP",
   category: "AI-pipeline för inkommande e-post",
   summary:
-    "En MVP som visar ett komplett flöde från inkommande e-post till strukturerad affärsdata: IMAP-ingestion, LLM-bearbetning och synk till partner-API. I dashboarden kan hela kedjan testas direkt med fokus på tydlig pipeline och snabb validering.",
+    "Problem: Inkommande e-post kommer i varierande format och är svår att hantera konsekvent i manuella flöden. Lösning: En MVP-pipeline som normaliserar IMAP-mail, extraherar nyckelinformation med LLM och mappar vidare till partner-API med confidence-baserad kvalitetssignal. Resultat: Snabbare triage och ett integrationsredo dataflöde som kan testas och valideras direkt i dashboarden.",
   impact: [
-    "IMAP-ingestion som hämtar mail och normaliserar innehåll till ett enhetligt schema",
-    "LLM-steg som sammanfattar, extraherar actions och beräknar confidence-score för beslutstöd",
-    "Partner API-sync med strukturerad payload och retry-redo design för robust integration",
+    "Problem: Ostandardiserad inkommande maildata gjorde prioritering och handoff till externa system tidskrävande",
+    "Lösning: IMAP-normalisering följt av LLM-extraktion av sammanfattning, actions och confidence-score för mer konsekvent beslutsunderlag",
+    "Resultat: Strukturerad partner-payload med integrationsredo flöde som kortar vägen från inkorg till vidare hantering",
   ],
   stack: ["TypeScript", "React", "IMAP", "LLM", "REST API", "Netlify"],
   href: "https://inboxbridge-elli-mvp.netlify.app/",
