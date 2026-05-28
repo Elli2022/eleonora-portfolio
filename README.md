@@ -1,34 +1,38 @@
-# Portfolio Site
+# Eleonora Portfolio
 
-En modern portfolio byggd med Next.js 16, React 19, TypeScript och Tailwind CSS 4.
+Modern portfolio focused on real client-style delivery: company websites, web apps, API-heavy builds, and data projects.
 
-## Projektets innehåll
+## Demo
 
-- Hero-sektion med tydlig personlig profil
-- Utvalda projektkort för livecase
-- Sektion för arbetssätt och stack
-- Kontaktsektion med mail och LinkedIn
-- Statisk export som fungerar smidigt på Netlify
+- Live: [eleonora-portfolio.netlify.app](https://eleonora-portfolio.netlify.app/)
 
-## Kom igång lokalt
+## Screenshot
+
+![Portfolio homepage](docs/screenshots/home.png)
+
+## Tech
+
+- Next.js 16 (App Router)
+- React 19 + TypeScript
+- Tailwind CSS 4
+- Static export for Netlify
+- Client-side SV/EN language toggle with persistent preference
+
+## Outcome
+
+- Clearer recruiter/client scanability with categorized case cards and filters.
+- Bilingual presentation (SV/EN) to support both Swedish and international opportunities.
+- Faster trust-building through live demos + repository links on each major case.
+
+## Local Development
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Bygg för produktion
+## Production Build
 
 ```bash
 npm run build
 ```
-
-Den färdiga statiska sajten hamnar i `out/`.
-
-## Stack
-
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS 4
-- Netlify
