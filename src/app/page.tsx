@@ -1,10 +1,6 @@
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Frilans webbutveckling · referenser",
-  description:
-    "Webb och frontend för företag och organisationer – tydliga leveranser, modern stack och ansvarsfull överlämning.",
-};
+import { useMemo, useState } from "react";
 
 type Project = {
   name: string;
@@ -23,6 +19,17 @@ type Project = {
     accent: string;
     highlight: string;
   };
+};
+
+type ProjectFilter = "Alla" | "Företag" | "Webbapp" | "Data" | "Praktik";
+
+const projectFilters: ProjectFilter[] = ["Alla", "Företag", "Webbapp", "Data", "Praktik"];
+
+const filterBadgeMap: Record<Exclude<ProjectFilter, "Alla">, string[]> = {
+  Företag: ["Företag", "Juridik", "Produkt", "Organisation"],
+  Webbapp: ["Webbapp", "Spel", "AI"],
+  Data: ["Data"],
+  Praktik: ["Praktik"],
 };
 
 const projects: Project[] = [
@@ -471,7 +478,24 @@ function ProjectPreview({ project }: { project: Project }) {
 }
 
 export default function Home() {
+  const [activeFilter, setActiveFilter] = useState<ProjectFilter>("Alla");
   const currentYear = new Date().getFullYear();
+
+  const filteredProjects = useMemo(
+    () =>
+      projects.filter((project) => {
+        if (project.name === "Receptbok") {
+          return false;
+        }
+
+        if (activeFilter === "Alla") {
+          return true;
+        }
+
+        return filterBadgeMap[activeFilter].includes(project.badge);
+      }),
+    [activeFilter],
+  );
 
   return (
     <main className="relative overflow-hidden">
@@ -563,13 +587,39 @@ export default function Home() {
             </p>
           </div>
 
+          <div className="reveal mb-8 flex flex-wrap gap-3" style={{ animationDelay: "80ms" }}>
+            {projectFilters.map((filter) => {
+              const isActive = activeFilter === filter;
+
+              return (
+                <button
+                  key={filter}
+                  type="button"
+                  onClick={() => setActiveFilter(filter)}
+                  className={`rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-200 ${
+                    isActive
+                      ? "border-[color:var(--accent)] bg-[color:var(--ink)] text-white shadow-[0_10px_26px_rgba(21,39,55,0.24)]"
+                      : "border-[color:var(--line)] bg-white/70 text-[color:var(--muted)] hover:border-[color:var(--accent)] hover:bg-white hover:text-[color:var(--ink)]"
+                  }`}
+                >
+                  {filter}
+                </button>
+              );
+            })}
+          </div>
+
           <div className="space-y-8">
-            {projects.filter((project) => project.name !== "Receptbok").map((project, index) => (
+            {filteredProjects.map((project, index) => (
               <article
                 key={project.name}
-                className="glass-card reveal grid gap-8 overflow-hidden rounded-[2rem] p-6 lg:grid-cols-[1.08fr_0.92fr] lg:p-8"
+                className="glass-card reveal group relative grid gap-8 overflow-hidden rounded-[2rem] border border-transparent p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[color:var(--accent)] hover:shadow-[0_28px_54px_rgba(21,39,55,0.18)] lg:grid-cols-[1.08fr_0.92fr] lg:p-8"
                 style={{ animationDelay: `${index * 120}ms` }}
               >
+                <div className="pointer-events-none absolute right-6 top-6">
+                  <span className="inline-flex items-center rounded-full border border-[color:var(--line)] bg-white/80 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--accent-deep)] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                    Öppna case
+                  </span>
+                </div>
                 <div className="flex flex-col justify-between gap-8">
                   <div className="space-y-4">
                     <div className="flex flex-wrap items-center gap-3 text-sm">
