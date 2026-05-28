@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type Project = {
   name: string;
@@ -21,15 +21,207 @@ type Project = {
   };
 };
 
-type ProjectFilter = "Alla" | "Företag" | "Webbapp" | "Data" | "Praktik";
 
-const projectFilters: ProjectFilter[] = ["Alla", "Företag", "Webbapp", "Data", "Praktik"];
+type Language = "sv" | "en";
 
-const filterBadgeMap: Record<Exclude<ProjectFilter, "Alla">, string[]> = {
-  Företag: ["Företag", "Juridik", "Produkt", "Organisation"],
-  Webbapp: ["Webbapp", "Spel", "AI"],
-  Data: ["Data"],
-  Praktik: ["Praktik"],
+type FilterKey = "all" | "company" | "webapp" | "data" | "internship";
+
+type ProjectFilter = {
+  key: FilterKey;
+  labelSv: string;
+};
+
+const projectFilters: ProjectFilter[] = [
+  { key: "all", labelSv: "Alla" },
+  { key: "company", labelSv: "Företag" },
+  { key: "webapp", labelSv: "Webbapp" },
+  { key: "data", labelSv: "Data" },
+  { key: "internship", labelSv: "Praktik" },
+];
+
+const filterBadgeMap: Record<Exclude<FilterKey, "all">, string[]> = {
+  company: ["Företag", "Juridik", "Produkt", "Organisation"],
+  webapp: ["Webbapp", "Spel", "AI"],
+  data: ["Data"],
+  internship: ["Praktik"],
+};
+
+const translations = {
+  sv: {
+    nav: { projects: "Projekt", approach: "Process", contact: "Kontakt" },
+    languageToggleLabel: "Välj språk",
+    hero: {
+      eyebrow: "Frilans · Webb & frontend",
+      title:
+        "Webb för företag och organisationer som vill ha tydlig kommunikation, trygg leverans och modern frontend – jag tar ansvar från struktur till launch.",
+      lead:
+        "Jag tar er från kartläggda behov till en lanserad webb eller webbapp med genomtänkt struktur, vässad frontend och rimliga förväntningar på innehåll och CMS. Efter launch finns plan för överlämning, prestanda och vidare utveckling.",
+      primaryCta: "Se referenser och case",
+      secondaryCta: "Diskutera ert projekt",
+      stats: [
+        { value: "13", label: "Case ni kan granska" },
+        { value: "1–2 v", label: "Återkoppling på förfrågan" },
+        { value: "Next + WP", label: "Typ av leveranser" },
+      ],
+    },
+    projects: {
+      eyebrow: "Utvalda projekt",
+      title: "Utvalda case med tydlig riktning och affärsnytta.",
+      intro:
+        "När ni utvärderar en leverantör behöver ni se bredd: landningssidor, företagswebbar, webbappar i Next/React, API‑driven backend, live‑data‑ och mobilappar samt dataverktyg – och CMS‑arbete i WordPress där det passar. Märkta praktikcase visar hur jag jobbat i byråmiljö med äkta krav. Jag tar ägarskap för lösningen vi gemensamt landar och kan bygga vidare när ni lanserar nästa steg.",
+      hoverCue: "Öppna case",
+      impactLabel: "Det här projektet visar",
+      stackLabel: "Stack och fokus",
+      repoLabel: "Se repo",
+      filterLabels: {
+        all: "Alla",
+        company: "Företag",
+        webapp: "Webbapp",
+        data: "Data",
+        internship: "Praktik",
+      },
+    },
+    approach: {
+      eyebrow: "Arbetssätt",
+      title: "Tydlig riktning från första intryck till rätt nästa steg.",
+      principles: [
+        {
+          title: "Tydlig riktning",
+          description:
+            "Varje layout utgår från vad besökaren ska känna, förstå och göra direkt på sidan.",
+        },
+        {
+          title: "Design med nerv",
+          description:
+            "Jag gillar att skapa uttryck som känns genomtänkta, levande och anpassade till projektets tonalitet.",
+        },
+        {
+          title: "Modern frontend",
+          description:
+            "Byggt i en aktuell stack som är snabb att utveckla i, enkel att underhålla och trygg att deploya.",
+        },
+      ],
+      stackEyebrow: "Aktuell stack",
+      stackTitle: "Modern och stabil stack för snabb, trygg leverans.",
+      stackLead:
+        "Teknikvalen är gjorda för snabb utveckling, trygg deploy och enkel vidareutveckling när nya behov uppstår.",
+    },
+    collaboration: {
+      eyebrow: "Samarbete",
+      title: "Så jobbar jag med er som kund.",
+      lead:
+        "Ni får förutsägbar scope, skriftlig offert, avstämda milstolpar och löpande kommunikation – så att leveransen matchar budget, tid och kvalitetskrav hela vägen.",
+      bullets: [
+        "Kickoff där vi samlar mål, målgrupp, budskap och tekniska förutsättningar",
+        "Offert och leveranslista med milstoplar – ni vet vad som ingår och när det levereras",
+        "Produktion med återkommande demos och avstämding innan nästa steg går i produktion",
+        "Launch med överlämning: dokumentation, intro till drift/innehåll och plan för vidareförvaltning",
+      ],
+    },
+    contact: {
+      eyebrow: "Kontakt",
+      title: "Ny sajt, förnya befintlig eller starta ett konkret uppdrag?",
+      lead:
+        "Maila en kort beskrivning av mål, tid och budgetram – jag återkopplar inom rimlig tid med förslag på nästa steg eller ett första möte. Passar det för er kan vi ta fram scope och offert innan produktion startar.",
+    },
+    footerTail: "Portfolio byggd med Next.js, React och Tailwind CSS.",
+    ctaFallbacks: {
+      openLiveSite: "Öppna livesajt",
+      openNewsPage: "Öppna nyhetssidan",
+      openCase: "Öppna case",
+    },
+  },
+  en: {
+    nav: { projects: "Projects", approach: "Process", contact: "Contact" },
+    languageToggleLabel: "Select language",
+    hero: {
+      eyebrow: "Freelance · Web & frontend",
+      title:
+        "Web solutions for companies and organizations that need clear communication, dependable delivery, and modern frontend execution — I take ownership from structure to launch.",
+      lead:
+        "I take you from mapped needs to a launched website or web app with thoughtful structure, sharp frontend, and realistic expectations for content and CMS. After launch, there is a clear plan for handover, performance, and further development.",
+      primaryCta: "View references and cases",
+      secondaryCta: "Discuss your project",
+      stats: [
+        { value: "13", label: "Cases you can review" },
+        { value: "1–2 w", label: "Response time on inquiry" },
+        { value: "Next + WP", label: "Delivery profile" },
+      ],
+    },
+    projects: {
+      eyebrow: "Selected projects",
+      title: "Selected cases with clear direction and business value.",
+      intro:
+        "When evaluating a supplier, you need range: landing pages, company websites, Next/React web apps, API-driven backend work, live-data and mobile apps, and data tools — plus WordPress CMS work where relevant. Marked internship cases show how I work in agency environments with real requirements. I take ownership of the solution we agree on and can continue building as you launch the next phase.",
+      hoverCue: "Open case",
+      impactLabel: "This project demonstrates",
+      stackLabel: "Stack and focus",
+      repoLabel: "View repo",
+      filterLabels: {
+        all: "All",
+        company: "Company",
+        webapp: "Web app",
+        data: "Data",
+        internship: "Internship",
+      },
+    },
+    approach: {
+      eyebrow: "Approach",
+      title: "Clear direction from first impression to the right next step.",
+      principles: [
+        {
+          title: "Clear direction",
+          description:
+            "Each layout starts with what the visitor should feel, understand, and do right away.",
+        },
+        {
+          title: "Design with character",
+          description:
+            "I like building visual expressions that feel intentional, vibrant, and aligned with each project's tone.",
+        },
+        {
+          title: "Modern frontend",
+          description:
+            "Built with a modern stack that is fast to develop in, easy to maintain, and safe to deploy.",
+        },
+      ],
+      stackEyebrow: "Current stack",
+      stackTitle: "Modern, stable stack for fast, reliable delivery.",
+      stackLead:
+        "Technology choices are made for fast development, dependable deploys, and smooth evolution as new needs appear.",
+    },
+    collaboration: {
+      eyebrow: "Collaboration",
+      title: "How I work with you as a client.",
+      lead:
+        "You get predictable scope, a written quote, aligned milestones, and continuous communication — so the delivery stays on budget, on time, and on quality from start to finish.",
+      bullets: [
+        "Kickoff where we align goals, target group, messaging, and technical prerequisites",
+        "Quote and delivery plan with milestones — you know what is included and when it ships",
+        "Production with recurring demos and alignment before the next phase enters production",
+        "Launch and handover: documentation, onboarding to operations/content, and a plan for ongoing management",
+      ],
+    },
+    contact: {
+      eyebrow: "Contact",
+      title: "New site, redesign, or a concrete new assignment?",
+      lead:
+        "Send a short description of goals, timeline, and budget frame — I will reply within a reasonable time with a suggested next step or an initial meeting. If it is a fit, we can define scope and quote before production starts.",
+    },
+    footerTail: "Portfolio built with Next.js, React, and Tailwind CSS.",
+    ctaFallbacks: {
+      openLiveSite: "Open live site",
+      openNewsPage: "Open news page",
+      openCase: "Open case",
+    },
+  },
+} as const;
+
+const translateProjectCta = (cta: string, language: Language) => {
+  const labels = translations[language].ctaFallbacks;
+  if (cta === "Öppna nyhetssidan") return labels.openNewsPage;
+  if (cta === "Öppna livesajt") return labels.openLiveSite;
+  return labels.openCase;
 };
 
 const projects: Project[] = [
@@ -370,24 +562,6 @@ const projects: Project[] = [
 
 ];
 
-const principles = [
-  {
-    title: "Tydlig riktning",
-    description:
-      "Varje layout utgår från vad besökaren ska känna, förstå och göra direkt på sidan.",
-  },
-  {
-    title: "Design med nerv",
-    description:
-      "Jag gillar att skapa uttryck som känns genomtänkta, levande och anpassade till projektets tonalitet.",
-  },
-  {
-    title: "Modern frontend",
-    description:
-      "Byggt i en aktuell stack som är snabb att utveckla i, enkel att underhålla och trygg att deploya.",
-  },
-];
-
 const stack = [
   "Next.js 16",
   "React 19",
@@ -478,8 +652,21 @@ function ProjectPreview({ project }: { project: Project }) {
 }
 
 export default function Home() {
-  const [activeFilter, setActiveFilter] = useState<ProjectFilter>("Alla");
+  const [language, setLanguage] = useState<Language>("sv");
+  const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
   const currentYear = new Date().getFullYear();
+  const copy = translations[language];
+
+  useEffect(() => {
+    const stored = localStorage.getItem("portfolioLang");
+    if (stored === "sv" || stored === "en") {
+      setLanguage(stored);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("portfolioLang", language);
+  }, [language]);
 
   const filteredProjects = useMemo(
     () =>
@@ -488,7 +675,7 @@ export default function Home() {
           return false;
         }
 
-        if (activeFilter === "Alla") {
+        if (activeFilter === "all") {
           return true;
         }
 
@@ -510,14 +697,39 @@ export default function Home() {
               Eleonora Nocentini Sköldebrink
             </a>
             <nav className="flex flex-wrap items-center gap-2 text-sm text-[color:var(--muted)]">
+              <div
+                className="mr-1 inline-flex items-center rounded-full border border-[color:var(--line)] bg-white/75 p-1"
+                role="group"
+                aria-label={copy.languageToggleLabel}
+              >
+                {(["sv", "en"] as const).map((lang) => {
+                  const isActive = language === lang;
+                  return (
+                    <button
+                      key={lang}
+                      type="button"
+                      onClick={() => setLanguage(lang)}
+                      aria-label={lang === "sv" ? "Visa sidan på svenska" : "Show page in English"}
+                      aria-pressed={isActive}
+                      className={`rounded-full px-3 py-1.5 text-xs font-semibold tracking-[0.16em] transition ${
+                        isActive
+                          ? "bg-[color:var(--ink)] text-white shadow-[0_8px_20px_rgba(21,39,55,0.24)]"
+                          : "text-[color:var(--muted)] hover:bg-white hover:text-[color:var(--ink)]"
+                      }`}
+                    >
+                      {lang.toUpperCase()}
+                    </button>
+                  );
+                })}
+              </div>
               <a className="rounded-full px-3 py-1.5 transition hover:bg-white/70 hover:text-[color:var(--ink)]" href="#projects">
-                Projekt
+                {copy.nav.projects}
               </a>
               <a className="rounded-full px-3 py-1.5 transition hover:bg-white/70 hover:text-[color:var(--ink)]" href="#approach">
-                Process
+                {copy.nav.approach}
               </a>
               <a className="rounded-full px-3 py-1.5 transition hover:bg-white/70 hover:text-[color:var(--ink)]" href="#contact">
-                Kontakt
+                {copy.nav.contact}
               </a>
             </nav>
           </div>
@@ -526,12 +738,12 @@ export default function Home() {
         <section id="top" className="grid gap-10 pb-20 pt-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:pb-28">
           <div className="space-y-8">
             <div className="reveal space-y-5">
-              <p className="eyebrow text-xs font-bold">Frilans · Webb & frontend</p>
+              <p className="eyebrow text-xs font-bold">{copy.hero.eyebrow}</p>
               <h1 className="section-title max-w-4xl text-[clamp(3.2rem,8vw,6.5rem)] font-bold leading-[0.94]">
-                Webb för företag och organisationer som vill ha tydlig kommunikation, trygg leverans och modern frontend – jag tar ansvar från struktur till launch.
+                {copy.hero.title}
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)] sm:text-xl">
-                Jag tar er från kartläggda behov till en lanserad webb eller webbapp med genomtänkt struktur, vässad frontend och rimliga förväntningar på innehåll och CMS. Efter launch finns plan för överlämning, prestanda och vidare utveckling.
+                {copy.hero.lead}
               </p>
             </div>
 
@@ -540,22 +752,18 @@ export default function Home() {
                 href="#projects"
                 className="inline-flex items-center justify-center rounded-full bg-[color:var(--ink)] px-6 py-3.5 text-sm font-semibold text-white transition hover:translate-y-[-1px] hover:bg-black"
               >
-                Se referenser och case
+                {copy.hero.primaryCta}
               </a>
               <a
                 href="mailto:eleonora.nocentini@gmail.com"
                 className="inline-flex items-center justify-center rounded-full border border-[color:var(--line)] bg-white/80 px-6 py-3.5 text-sm font-semibold text-[color:var(--ink)] transition hover:border-[color:var(--accent)] hover:bg-white"
               >
-                Diskutera ert projekt
+                {copy.hero.secondaryCta}
               </a>
             </div>
 
             <div className="reveal grid gap-3 sm:grid-cols-3" style={{ animationDelay: "220ms" }}>
-              {[
-                { value: "13", label: "Case ni kan granska" },
-                { value: "1–2 v", label: "Återkoppling på förfrågan" },
-                { value: "Next + WP", label: "Typ av leveranser" },
-              ].map((item) => (
+              {copy.hero.stats.map((item) => (
                 <div key={item.label} className="glass-card rounded-[1.6rem] p-5">
                   <p className="font-display text-3xl font-bold tracking-tight">{item.value}</p>
                   <p className="mt-2 text-sm text-[color:var(--muted)]">{item.label}</p>
@@ -577,32 +785,32 @@ export default function Home() {
         <section id="projects" className="pb-20 lg:pb-28">
           <div className="reveal mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div className="space-y-3">
-              <p className="eyebrow text-xs font-bold">Utvalda projekt</p>
+              <p className="eyebrow text-xs font-bold">{copy.projects.eyebrow}</p>
               <h2 className="section-title text-4xl font-bold sm:text-5xl">
-                Utvalda case med tydlig riktning och affärsnytta.
+                {copy.projects.title}
               </h2>
             </div>
             <p className="max-w-xl text-base leading-7 text-[color:var(--muted)]">
-              När ni utvärderar en leverantör behöver ni se bredd: landningssidor, företagswebbar, webbappar i Next/React, API‑driven backend, live‑data‑ och mobilappar samt dataverktyg – och CMS‑arbete i WordPress där det passar. Märkta praktikcase visar hur jag jobbat i byråmiljö med äkta krav. Jag tar ägarskap för lösningen vi gemensamt landar och kan bygga vidare när ni lanserar nästa steg.
+              {copy.projects.intro}
             </p>
           </div>
 
           <div className="reveal mb-8 flex flex-wrap gap-3" style={{ animationDelay: "80ms" }}>
             {projectFilters.map((filter) => {
-              const isActive = activeFilter === filter;
+              const isActive = activeFilter === filter.key;
 
               return (
                 <button
-                  key={filter}
+                  key={filter.key}
                   type="button"
-                  onClick={() => setActiveFilter(filter)}
+                  onClick={() => setActiveFilter(filter.key)}
                   className={`rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-200 ${
                     isActive
                       ? "border-[color:var(--accent)] bg-[color:var(--ink)] text-white shadow-[0_10px_26px_rgba(21,39,55,0.24)]"
                       : "border-[color:var(--line)] bg-white/70 text-[color:var(--muted)] hover:border-[color:var(--accent)] hover:bg-white hover:text-[color:var(--ink)]"
                   }`}
                 >
-                  {filter}
+                  {copy.projects.filterLabels[filter.key]}
                 </button>
               );
             })}
@@ -617,7 +825,7 @@ export default function Home() {
               >
                 <div className="pointer-events-none absolute right-6 top-6">
                   <span className="inline-flex items-center rounded-full border border-[color:var(--line)] bg-white/80 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--accent-deep)] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                    Öppna case
+                    {copy.projects.hoverCue}
                   </span>
                 </div>
                 <div className="flex flex-col justify-between gap-8">
@@ -639,7 +847,7 @@ export default function Home() {
                   <div className="grid gap-6 lg:grid-cols-2">
                     <div>
                       <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-[color:var(--accent-deep)]">
-                        Det här projektet visar
+                        {copy.projects.impactLabel}
                       </p>
                       <ul className="space-y-3 text-sm leading-6 text-[color:var(--muted)]">
                         {project.impact.map((item) => (
@@ -653,7 +861,7 @@ export default function Home() {
                     <div className="space-y-5">
                       <div>
                         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-[color:var(--accent-deep)]">
-                          Stack och fokus
+                          {copy.projects.stackLabel}
                         </p>
                         <div className="flex flex-wrap gap-2">
                           {project.stack.map((item) => (
@@ -674,7 +882,7 @@ export default function Home() {
                           rel="noreferrer"
                           className="inline-flex items-center gap-2 rounded-full bg-[color:var(--ink)] px-5 py-3 text-sm font-semibold text-white transition hover:translate-y-[-1px] hover:bg-black"
                         >
-                          {project.cta}
+                          {translateProjectCta(project.cta, language)}
                           <ExternalIcon />
                         </a>
                         {project.repoHref ? (
@@ -684,7 +892,7 @@ export default function Home() {
                             rel="noreferrer"
                             className="inline-flex items-center gap-2 rounded-full border border-[color:var(--line)] bg-white/75 px-5 py-3 text-sm font-semibold text-[color:var(--ink)] transition hover:border-[color:var(--accent)] hover:bg-white"
                           >
-                            Se repo
+                            {copy.projects.repoLabel}
                             <ExternalIcon />
                           </a>
                         ) : null}
@@ -703,15 +911,15 @@ export default function Home() {
 
         <section id="approach" className="pb-20 lg:pb-28">
           <div className="reveal mb-10 space-y-3">
-            <p className="eyebrow text-xs font-bold">Arbetssätt</p>
+            <p className="eyebrow text-xs font-bold">{copy.approach.eyebrow}</p>
             <h2 className="section-title text-4xl font-bold sm:text-5xl">
-              Tydlig riktning från första intryck till rätt nästa steg.
+              {copy.approach.title}
             </h2>
           </div>
 
           <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
             <div className="grid gap-5 md:grid-cols-3">
-              {principles.map((item, index) => (
+              {copy.approach.principles.map((item, index) => (
                 <article
                   key={item.title}
                   className="glass-card reveal rounded-[1.75rem] p-6"
@@ -729,13 +937,12 @@ export default function Home() {
             </div>
 
             <aside className="glass-card reveal rounded-[1.9rem] p-6" style={{ animationDelay: "180ms" }}>
-              <p className="eyebrow text-xs font-bold">Aktuell stack</p>
+              <p className="eyebrow text-xs font-bold">{copy.approach.stackEyebrow}</p>
               <h3 className="section-title mt-3 text-3xl font-bold">
-                Modern och stabil stack för snabb, trygg leverans.
+                {copy.approach.stackTitle}
               </h3>
               <p className="mt-4 text-base leading-7 text-[color:var(--muted)]">
-                Teknikvalen är gjorda för snabb utveckling, trygg deploy och enkel
-                vidareutveckling när nya behov uppstår.
+                {copy.approach.stackLead}
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {stack.map((item) => (
@@ -756,22 +963,17 @@ export default function Home() {
           <div className="glass-card reveal rounded-[2rem] p-8 sm:p-10">
             <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
               <div className="space-y-4">
-                <p className="eyebrow text-xs font-bold">Samarbete</p>
+                <p className="eyebrow text-xs font-bold">{copy.collaboration.eyebrow}</p>
                 <h2 className="section-title text-4xl font-bold sm:text-5xl">
-                  Så jobbar jag med er som kund.
+                  {copy.collaboration.title}
                 </h2>
                 <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
-                  Ni får förutsägbar scope, skriftlig offert, avstämda milstolpar och löpande kommunikation – så att leveransen matchar budget, tid och kvalitetskrav hela vägen.
+                  {copy.collaboration.lead}
                 </p>
               </div>
 
               <div className="grid gap-4">
-                {[
-                  "Kickoff där vi samlar mål, målgrupp, budskap och tekniska förutsättningar",
-                  "Offert och leveranslista med milstoplar – ni vet vad som ingår och när det levereras",
-                  "Produktion med återkommande demos och avstämding innan nästa steg går i produktion",
-                  "Launch med överlämning: dokumentation, intro till drift/innehåll och plan för vidareförvaltning",
-                ].map((item) => (
+                {copy.collaboration.bullets.map((item) => (
                   <div
                     key={item}
                     className="rounded-2xl border border-[color:var(--line)] bg-white/70 px-5 py-4 text-base leading-7"
@@ -788,12 +990,12 @@ export default function Home() {
           <div className="glass-card reveal rounded-[2.2rem] p-8 sm:p-10">
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
               <div className="space-y-4">
-                <p className="eyebrow text-xs font-bold">Kontakt</p>
+                <p className="eyebrow text-xs font-bold">{copy.contact.eyebrow}</p>
                 <h2 className="section-title text-4xl font-bold sm:text-5xl">
-                  Ny sajt, förnya befintlig eller starta ett konkret uppdrag?
+                  {copy.contact.title}
                 </h2>
                 <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
-                  Maila en kort beskrivning av mål, tid och budgetram – jag återkopplar inom rimlig tid med förslag på nästa steg eller ett första möte. Passar det för er kan vi ta fram scope och offert innan produktion startar.
+                  {copy.contact.lead}
                 </p>
               </div>
 
@@ -814,8 +1016,7 @@ export default function Home() {
 
             <div className="mt-10 border-t border-[color:var(--line)] pt-5 text-sm text-[color:var(--muted)]">
               <p>
-                © {currentYear} Eleonora Nocentini Sköldebrink. Portfolio byggd med
-                Next.js, React och Tailwind CSS.
+                © {currentYear} Eleonora Nocentini Sköldebrink. {copy.footerTail}
               </p>
             </div>
           </div>
