@@ -226,6 +226,43 @@ const translateProjectCta = (cta: string, language: Language) => {
 
 type ProjectTranslationEn = Pick<Project, "category" | "summary" | "impact">;
 
+const badgeTranslationsEn: Record<string, string> = {
+  Företag: "Company",
+  Pågår: "In progress",
+  Produkt: "Product",
+  Webbapp: "Web app",
+  Spel: "Game",
+  Juridik: "Legal",
+  Organisation: "Organization",
+  Praktik: "Internship",
+  "Mat & vardag": "Food & daily life",
+};
+
+const previewHighlightTranslationsEn: Record<string, string> = {
+  Kontaktformulär: "Contact form",
+  "Lokal SEO": "Local SEO",
+  Responsiv: "Responsive",
+  "Live på Netlify": "Live on Netlify",
+  "Flöde & vänner": "Feed & friends",
+  Landningssida: "Landing page",
+  Konvertering: "Conversion",
+  "Live-data": "Live data",
+  "3 hamnar": "3 ports",
+  "Auto-uppdatering": "Auto update",
+  "ML-kalibrering": "ML calibration",
+  "Svenska Spel": "Svenska Spel",
+  "Barn 5–7 år": "Children ages 5-7",
+  Affärsjuridik: "Business law",
+  Tjänstesidor: "Service pages",
+  Italienska: "Italian",
+  "Tydliga tjänster": "Clear services",
+  "Auth-flöde": "Auth flow",
+  "Tid i fokus": "Time-focused UX",
+  "April 2024": "April 2024",
+  Nyheter: "News",
+  Favoriter: "Favorites",
+};
+
 const projectTranslationsEn: Record<string, ProjectTranslationEn> = {
   "Trygg Vardag Skåne": {
     category: "Company website for care and assistance services",
@@ -373,13 +410,16 @@ const localizeProject = (project: Project, language: Language): Project => {
   if (language !== "en") return project;
 
   const translated = projectTranslationsEn[project.name];
-  if (!translated) return project;
 
   return {
     ...project,
-    category: translated.category ?? project.category,
-    summary: translated.summary ?? project.summary,
-    impact: translated.impact.length > 0 ? translated.impact : project.impact,
+    category: translated?.category ?? project.category,
+    summary: translated?.summary ?? project.summary,
+    impact: translated?.impact.length ? translated.impact : project.impact,
+    badge: badgeTranslationsEn[project.badge] ?? project.badge,
+    previewHighlights: project.previewHighlights.map(
+      (item) => previewHighlightTranslationsEn[item] ?? item,
+    ),
   };
 };
 
