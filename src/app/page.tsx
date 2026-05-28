@@ -48,7 +48,12 @@ const filterBadgeMap: Record<Exclude<FilterKey, "all">, string[]> = {
 
 const translations = {
   sv: {
-    nav: { projects: "Projekt", approach: "Process", contact: "Kontakt" },
+    nav: {
+      projects: "Projekt",
+      approach: "Process",
+      reference: "Referens",
+      contact: "Kontakt",
+    },
     languageToggleLabel: "Välj språk",
     hero: {
       eyebrow: "Frilans · Webb & frontend",
@@ -118,6 +123,20 @@ const translations = {
         "Launch med överlämning: dokumentation, intro till drift/innehåll och plan för vidareförvaltning",
       ],
     },
+    reference: {
+      eyebrow: "Referens",
+      title: "Bekräftad praktik från Capace Media",
+      lead:
+        "Under LIA på Capace Media Group i Malmö (27 nov 2023 – 1 feb 2024) arbetade jag med headless WordPress, WPGraphQL och React/Next.js — samma period som praktikcaset Sveriges offentliga kockar i projektlistan.",
+      quote:
+        "Eleonoras tekniska kompetens och problemlösning har varit på en hög nivå. Hennes självständighet och förmåga att ta till sig rätt information och implementera det på rätt sätt visar att hon kan leverera i byråmiljö.",
+      attribution: "Rick Centerhall, Lead Developer",
+      org: "Capace Media Group AB · Malmö",
+      period: "LIA 27 nov 2023 – 1 feb 2024",
+      pdfLabel: "Ladda ner LIA-intyg (PDF)",
+      agencyLabel: "Capace Media",
+      agencyHref: "https://capace.se/",
+    },
     contact: {
       eyebrow: "Kontakt",
       title: "Ny sajt, förnya befintlig eller starta ett konkret uppdrag?",
@@ -132,7 +151,12 @@ const translations = {
     },
   },
   en: {
-    nav: { projects: "Projects", approach: "Process", contact: "Contact" },
+    nav: {
+      projects: "Projects",
+      approach: "Process",
+      reference: "Reference",
+      contact: "Contact",
+    },
     languageToggleLabel: "Select language",
     hero: {
       eyebrow: "Freelance · Web & frontend",
@@ -201,6 +225,20 @@ const translations = {
         "Production with recurring demos and alignment before the next phase enters production",
         "Launch and handover: documentation, onboarding to operations/content, and a plan for ongoing management",
       ],
+    },
+    reference: {
+      eyebrow: "Reference",
+      title: "Confirmed internship at Capace Media",
+      lead:
+        "During my LIA internship at Capace Media Group in Malmö (27 Nov 2023 – 1 Feb 2024) I worked with headless WordPress, WPGraphQL, and React/Next.js — the same period as the Sveriges offentliga kockar internship case in the project list.",
+      quote:
+        "Eleonora's technical skills and problem-solving have been at a high level. Her independence and ability to absorb the right information and implement it correctly show she can deliver in an agency environment.",
+      attribution: "Rick Centerhall, Lead Developer",
+      org: "Capace Media Group AB · Malmö",
+      period: "LIA 27 Nov 2023 – 1 Feb 2024",
+      pdfLabel: "Download internship certificate (PDF)",
+      agencyLabel: "Capace Media",
+      agencyHref: "https://capace.se/",
     },
     contact: {
       eyebrow: "Contact",
@@ -932,6 +970,9 @@ export default function Home() {
               <a className="rounded-full px-3 py-1.5 transition hover:bg-white/70 hover:text-[color:var(--ink)]" href="#approach">
                 {copy.nav.approach}
               </a>
+              <a className="rounded-full px-3 py-1.5 transition hover:bg-white/70 hover:text-[color:var(--ink)]" href="#reference">
+                {copy.nav.reference}
+              </a>
               <a className="rounded-full px-3 py-1.5 transition hover:bg-white/70 hover:text-[color:var(--ink)]" href="#contact">
                 {copy.nav.contact}
               </a>
@@ -1185,6 +1226,53 @@ export default function Home() {
                     {item}
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="reference" className="pb-10">
+          <div className="glass-card reveal rounded-[2.2rem] p-8 sm:p-10">
+            <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-start">
+              <div className="space-y-5">
+                <p className="eyebrow text-xs font-bold">{copy.reference.eyebrow}</p>
+                <h2 className="section-title text-4xl font-bold sm:text-5xl">
+                  {copy.reference.title}
+                </h2>
+                <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)]">
+                  {copy.reference.lead}
+                </p>
+                <blockquote className="border-l-4 border-[color:var(--accent)] pl-5 text-lg leading-8 text-[color:var(--ink)] italic">
+                  &ldquo;{copy.reference.quote}&rdquo;
+                </blockquote>
+                <div className="space-y-1 text-sm text-[color:var(--muted)]">
+                  <p className="font-semibold text-[color:var(--ink)]">
+                    {copy.reference.attribution}
+                  </p>
+                  <p>{copy.reference.org}</p>
+                  <p>{copy.reference.period}</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-3 lg:pt-12">
+                <a
+                  href="/references/lia-intyg-capace-eleonora.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--ink)] px-5 py-3 text-sm font-semibold text-white transition hover:translate-y-[-1px] hover:bg-black"
+                >
+                  {copy.reference.pdfLabel}
+                  <ExternalIcon />
+                </a>
+                <a
+                  href={copy.reference.agencyHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[color:var(--line)] bg-white/70 px-5 py-3 text-sm font-semibold text-[color:var(--ink)] transition hover:translate-y-[-1px] hover:bg-white"
+                >
+                  {copy.reference.agencyLabel}
+                  <ExternalIcon />
+                </a>
               </div>
             </div>
           </div>
