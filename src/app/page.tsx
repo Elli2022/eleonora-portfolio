@@ -224,6 +224,165 @@ const translateProjectCta = (cta: string, language: Language) => {
   return labels.openCase;
 };
 
+type ProjectTranslationEn = Pick<Project, "category" | "summary" | "impact">;
+
+const projectTranslationsEn: Record<string, ProjectTranslationEn> = {
+  "Trygg Vardag Skåne": {
+    category: "Company website for care and assistance services",
+    summary:
+      "Problem: Visitors struggled to quickly understand the service and how to reach out. Solution: A clear information architecture with low-friction Web3Forms contact flow and solid SEO setup (metadata, Open Graph, canonical). Result: A clearer customer journey where more users move from first impression to inquiry without unnecessary friction.",
+    impact: [
+      "Problem: Unclear service overview and high threshold to first contact for older adults and relatives",
+      "Solution: Clear IA plus a Web3Forms contact flow with relevant fields, spam protection, and thank-you page",
+      "Result: Clearer path from information to inquiry, reinforced by local SEO with metadata, Open Graph, and canonical tags",
+    ],
+  },
+  "Community Auth Forum": {
+    category: "Social forum with auth and API (in progress)",
+    summary:
+      "Problem: A social forum needs strong authentication and a backend that scales over time. Solution: Node/Express/TypeScript with JWT, bcrypt, sanitize-html, and helmet, plus PostgreSQL migrations, deployed as serverless Netlify Functions APIs. Result: A stable technical foundation ready for additional social features with security and operational clarity.",
+    impact: [
+      "Problem: Social app with high requirements for secure sign-in, data protection, and long-term API structure",
+      "Solution: JWT + bcrypt hardened with sanitize-html and helmet, plus PostgreSQL migrations for controlled schema changes",
+      "Result: Robust backend foundation on Netlify Functions, ready for new features without heavyweight server operations",
+    ],
+  },
+  "InboxBridge MVP": {
+    category: "AI pipeline for inbound email",
+    summary:
+      "Problem: Incoming email arrives in inconsistent formats and is hard to process reliably in manual workflows. Solution: An MVP pipeline that normalizes IMAP messages, extracts key data with an LLM, and maps output to partner APIs with confidence scoring. Result: Faster triage and an integration-ready data flow that can be validated directly in the dashboard.",
+    impact: [
+      "Problem: Unstructured inbound email made prioritization and handoff to external systems time-consuming",
+      "Solution: IMAP normalization followed by LLM extraction of summaries, actions, and confidence scores for more consistent decisions",
+      "Result: Structured partner payload and integration-ready flow that shortens time from inbox to execution",
+    ],
+  },
+  "Nordflux eBook": {
+    category: "Product and landing page",
+    summary:
+      "A modern web experience for Nordflux eBook with a clear visual profile, conversion focus, and a fast path to content discovery.",
+    impact: [
+      "Highlights product value through clear structure and a strong opening section",
+      "Designed to guide visitors toward action with minimal friction",
+      "Deployed live on Netlify with a fast, stable frontend",
+    ],
+  },
+  "Färjeankomster Sverige": {
+    category: "Live-data app (Expo web + mobile)",
+    summary:
+      "An app for passenger ferry arrivals in Ystad, Trelleborg, and Helsingborg. It fetches and parses public MyShipTracking pages through an r.jina.ai proxy without paid AIS APIs, supports date-based views, deduplicates ETA against confirmed arrivals, and updates automatically.",
+    impact: [
+      "Parser that merges multiple port data sources while keeping listings consistent over time",
+      "CORS workaround via text proxy enables live web data without backend API keys",
+      "Status logic for arrived, scheduled, and delayed traffic plus tabs for quick operational overview",
+    ],
+  },
+  "Europatipset Optimizer": {
+    category: "Streamlit app for data and betting insights",
+    summary:
+      "Python/Streamlit decision support for Europatipset: historical odds ingestion, scikit-learn calibrated 1X2 model, sync with official coupon context, budget-aware system suggestions, backtesting, and betting logs. Deployed on Streamlit Cloud.",
+    impact: [
+      "ML probability calibration with backtesting to evaluate model performance over time",
+      "football-data.org API sync plus enrichment of coupon data for active rounds",
+      "Pytest suite securing core logic for odds handling, modeling, and suggestions",
+    ],
+  },
+  "Äventyrsparken": {
+    category: "Educational web games for ages 5-7",
+    summary:
+      "A playful mini-game hub with two games - Color Catcher and Animal Match - built for young children with large controls, clear feedback, and low stress. React/Vite app with PWA support, Web Audio, and Framer Motion animations.",
+    impact: [
+      "Color Catcher: random color prompts, streak tracking, and immediate visual/audio feedback",
+      "Animal Match: 12-card memory gameplay with matching logic and no time pressure",
+      "Accessible UX: sound toggle, portrait orientation in PWA manifest, and touch-friendly controls",
+    ],
+  },
+  "W Advokatbyrå": {
+    category: "Trust-led corporate website",
+    summary:
+      "A credibility-focused legal advisory site with premium feel, clear structure, and strong contact pathways.",
+    impact: [
+      "Creates a calm, professional first impression",
+      "Presents legal services clearly without feeling heavy",
+      "Built for straightforward navigation across firm, services, and contact",
+    ],
+  },
+  Italidea: {
+    category: "Italian language interpretation and support",
+    summary:
+      "A clear website for Italidea focused on Italian-language interpretation and support, helping visitors quickly find the right service and contact path.",
+    impact: [
+      "Clear service presentation for visitors needing support in Italian",
+      "Builds trust with a warm tone and explicit guidance",
+      "Live on Netlify with a setup that is easy to extend",
+    ],
+  },
+  Tidspuls: {
+    category: "Web app for time and attendance",
+    summary:
+      "A logged-in web app where users create accounts, sign in, and manage time and activity in a clear workflow. Deployed as a fast SPA on Netlify.",
+    impact: [
+      "Registration and sign-in flow designed for a secure first-use experience",
+      "Interface built to work equally well on mobile and desktop",
+      "Live Netlify environment enables quick sharing with stakeholders",
+    ],
+  },
+  "Convertor eBook": {
+    category: "Internship project and modernized landing page",
+    summary:
+      "During an internship at Convertor Svenska AB (April 2024), I helped modernize the landing page for their eBook offer with clearer structure, refreshed design, and a smoother user journey.",
+    impact: [
+      "Delivery in a real production context with product and communication requirements",
+      "Updated presentation with clearer information hierarchy and more readable flow",
+      "Frontend designed for easy iteration as messaging or campaigns evolve",
+    ],
+  },
+  "Francks Refurbishment": {
+    category: "Multilingual WordPress site during internship",
+    summary:
+      "During an internship at Convertor Svenska AB (February-May 2024), I contributed to Francks Refurbishment's pre-launch staging website by updating copy, building and refining WordPress modules, and supporting both Swedish and Danish versions.",
+    impact: [
+      "Built and refined WordPress modules to improve reusability and CMS editing flow",
+      "Structured and tightened copy for clearer messaging before staging and testing",
+      "Ensured Swedish and Danish versions stayed aligned in structure and content",
+    ],
+  },
+  "Sveriges offentliga kockar": {
+    category: "WordPress and news flow during internship",
+    summary:
+      "During an internship at Capace Media in Malmö (November 2023-February 2024), I contributed to WordPress development and troubleshooting, with a focus on the news section and frictionless editorial publishing workflows.",
+    impact: [
+      "Resolved technical blockers that slowed editors and marketers in CMS publishing",
+      "Stepped in effectively when senior developers were allocated to other client work",
+      "Improved operational stability and clearer update workflows for the site",
+    ],
+  },
+  Receptbok: {
+    category: "Full-stack recipe platform",
+    summary:
+      "A modern recipe app with PWA support, saved favorites, and optional frontend integration with an existing Express and MongoDB backend.",
+    impact: [
+      "App-like experience for finding, saving, and managing recipes",
+      "Mobile-friendly install flow with manifest and service worker",
+      "Next.js frontend with support for backend sync when needed",
+    ],
+  },
+};
+
+const localizeProject = (project: Project, language: Language): Project => {
+  if (language !== "en") return project;
+
+  const translated = projectTranslationsEn[project.name];
+  if (!translated) return project;
+
+  return {
+    ...project,
+    category: translated.category ?? project.category,
+    summary: translated.summary ?? project.summary,
+    impact: translated.impact.length > 0 ? translated.impact : project.impact,
+  };
+};
+
 const projects: Project[] = [
 
 
@@ -668,9 +827,14 @@ export default function Home() {
     localStorage.setItem("portfolioLang", language);
   }, [language]);
 
+  const localizedProjects = useMemo(
+    () => projects.map((project) => localizeProject(project, language)),
+    [language],
+  );
+
   const filteredProjects = useMemo(
     () =>
-      projects.filter((project) => {
+      localizedProjects.filter((project) => {
         if (project.name === "Receptbok") {
           return false;
         }
@@ -681,7 +845,7 @@ export default function Home() {
 
         return filterBadgeMap[activeFilter].includes(project.badge);
       }),
-    [activeFilter],
+    [activeFilter, localizedProjects],
   );
 
   return (
@@ -774,10 +938,10 @@ export default function Home() {
 
           <div className="reveal relative lg:justify-self-end" style={{ animationDelay: "180ms" }}>
             <div className="float-slow glass-card relative rounded-[2rem] p-4">
-              <ProjectPreview project={projects[0]} />
+              <ProjectPreview project={localizedProjects[0]} />
             </div>
             <div className="glass-card relative -mt-8 ml-auto w-[82%] rounded-[2rem] p-4 sm:-mt-12">
-              <ProjectPreview project={projects[1]} />
+              <ProjectPreview project={localizedProjects[1]} />
             </div>
           </div>
         </section>
