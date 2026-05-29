@@ -64,7 +64,7 @@ const translations = {
       primaryCta: "Se referenser och case",
       secondaryCta: "Diskutera ert projekt",
       stats: [
-        { value: "13", label: "Case ni kan granska" },
+        { value: "14", label: "Case ni kan granska" },
         { value: "1–2 v", label: "Återkoppling på förfrågan" },
         { value: "Next + WP", label: "Typ av leveranser" },
       ],
@@ -167,7 +167,7 @@ const translations = {
       primaryCta: "View references and cases",
       secondaryCta: "Discuss your project",
       stats: [
-        { value: "13", label: "Cases you can review" },
+        { value: "14", label: "Cases you can review" },
         { value: "1–2 w", label: "Response time on inquiry" },
         { value: "Next + WP", label: "Delivery profile" },
       ],
@@ -430,6 +430,16 @@ const projectTranslationsEn: Record<string, ProjectTranslationEn> = {
       "Resolved technical blockers that slowed editors and marketers in CMS publishing",
       "Stepped in effectively when senior developers were allocated to other client work",
       "Improved operational stability and clearer update workflows for the site",
+    ],
+  },
+  "Sparbanken Syd": {
+    category: "Form solutions in TYPO3 during internship",
+    summary:
+      "During an internship at Convertor Svenska AB (February-April 2024), I worked in the TYPO3 backend for Sparbanken Syd on their digital forms: building, customizing, and quality-assuring forms according to the bank's requirements for structure and content.",
+    impact: [
+      "Created and customized forms in the TYPO3 backend with the right fields, settings, and structure",
+      "Worked in the bank's Form Folder via List view, building on existing forms where appropriate",
+      "Saved, tested, and validated the forms so they worked in a live environment",
     ],
   },
   Receptbok: {
@@ -770,6 +780,29 @@ const projects: Project[] = [
       surface: "rgba(255, 251, 235, 0.14)",
       accent: "#faf6eb",
       highlight: "#fcd34d",
+    },
+  },
+
+  {
+    name: "Sparbanken Syd",
+    category: "Formulärlösningar i TYPO3 under praktik",
+    summary:
+      "Under LIA på Convertor Svenska AB (februari–april 2024) arbetade jag i TYPO3-backend åt Sparbanken Syd med deras digitala formulär: jag byggde, anpassade och kvalitetssäkrade formulär utifrån bankens krav på struktur och innehåll.",
+    impact: [
+      "Skapade och anpassade formulär i TYPO3:s backend med rätt fält, inställningar och struktur",
+      "Arbetade i bankens Form Folder via List view och utgick från befintliga formulär där det passade",
+      "Sparade, testade och funktionssäkrade formulären så de fungerade i skarp miljö",
+    ],
+    stack: ["TYPO3", "CMS", "Formulär"],
+    href: "https://www.sparbankensyd.se/",
+    cta: "Öppna livesajt",
+    badge: "Praktik",
+    previewHighlights: ["Convertor", "TYPO3", "Formulär", "Backend"],
+    preview: {
+      gradient: "linear-gradient(135deg, #0f2c52 0%, #1d4ed8 48%, #38bdf8 100%)",
+      surface: "rgba(240, 249, 255, 0.16)",
+      accent: "#eff6ff",
+      highlight: "#bfdbfe",
     },
   },
 
