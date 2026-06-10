@@ -11,8 +11,8 @@
   --accent-deep: #154a4b;
   --highlight: #e2c58d;
   --shadow: 0 32px 90px rgba(39, 28, 22, 0.12);
-  --font-body: "Avenir Next", "Segoe UI", sans-serif;
-  --font-display-local: "Gill Sans", "Trebuchet MS", sans-serif;
+  --font-body: var(--font-inter), "Avenir Next", "Segoe UI", sans-serif;
+  --font-display-local: var(--font-fraunces), "Gill Sans", "Trebuchet MS", serif;
 }
 
 @theme inline {
@@ -24,6 +24,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
   background:
     radial-gradient(circle at top left, rgba(201, 107, 58, 0.16), transparent 36%),
     radial-gradient(circle at top right, rgba(21, 74, 75, 0.16), transparent 32%),
@@ -47,15 +48,10 @@ a {
   text-decoration: none;
 }
 
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 @keyframes float {
@@ -69,7 +65,35 @@ a {
 }
 
 .reveal {
-  animation: rise 0.8s ease both;
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (scripting: none) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.scroll-progress {
+  position: fixed;
+  inset: 0 auto auto 0;
+  z-index: 60;
+  height: 3px;
+  width: 100%;
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-deep));
+  pointer-events: none;
 }
 
 .float-slow {
@@ -90,8 +114,13 @@ a {
 }
 
 .section-title {
-  font-family: var(--font-display-local), sans-serif;
-  letter-spacing: -0.04em;
+  font-family: var(--font-display-local);
+  letter-spacing: -0.02em;
+  font-variation-settings: "SOFT" 40, "WONK" 0;
+}
+
+.font-display {
+  font-family: var(--font-display-local);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -99,7 +128,12 @@ a {
     scroll-behavior: auto;
   }
 
-  .reveal,
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
   .float-slow {
     animation: none;
   }

@@ -57,10 +57,9 @@ const translations = {
     languageToggleLabel: "Välj språk",
     hero: {
       eyebrow: "Frilans · Webb & frontend",
-      title:
-        "Webb för företag och organisationer som vill ha tydlig kommunikation, trygg leverans och modern frontend – jag tar ansvar från struktur till launch.",
+      title: "Tydlig kommunikation. Trygg leverans. Modern frontend.",
       lead:
-        "Jag tar er från kartläggda behov till en lanserad webb eller webbapp med genomtänkt struktur, vässad frontend och rimliga förväntningar på innehåll och CMS. Efter launch finns plan för överlämning, prestanda och vidare utveckling.",
+        "Jag tar företag och organisationer från kartläggda behov till en lanserad webb eller webbapp – med genomtänkt struktur, vässad frontend och rimliga förväntningar på innehåll och CMS. Efter launch finns plan för överlämning, prestanda och vidare utveckling.",
       primaryCta: "Se referenser och case",
       secondaryCta: "Diskutera ert projekt",
       stats: [
@@ -160,10 +159,9 @@ const translations = {
     languageToggleLabel: "Select language",
     hero: {
       eyebrow: "Freelance · Web & frontend",
-      title:
-        "Web solutions for companies and organizations that need clear communication, dependable delivery, and modern frontend execution — I take ownership from structure to launch.",
+      title: "Clear communication. Dependable delivery. Modern frontend.",
       lead:
-        "I take you from mapped needs to a launched website or web app with thoughtful structure, sharp frontend, and realistic expectations for content and CMS. After launch, there is a clear plan for handover, performance, and further development.",
+        "I take companies and organizations from mapped needs to a launched website or web app — with thoughtful structure, sharp frontend, and realistic expectations for content and CMS. After launch, there is a clear plan for handover, performance, and further development.",
       primaryCta: "View references and cases",
       secondaryCta: "Discuss your project",
       stats: [
@@ -924,12 +922,15 @@ function ProjectPreview({ project }: { project: Project }) {
 export default function Home() {
   const [language, setLanguage] = useState<Language>("sv");
   const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
+  const [scrollProgress, setScrollProgress] = useState(0);
   const currentYear = new Date().getFullYear();
   const copy = translations[language];
 
   useEffect(() => {
     const stored = localStorage.getItem("portfolioLang");
     if (stored === "sv" || stored === "en") {
+      // One-time sync from localStorage after hydration; required for static export.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLanguage(stored);
     }
   }, []);
@@ -937,6 +938,46 @@ export default function Home() {
   useEffect(() => {
     localStorage.setItem("portfolioLang", language);
   }, [language]);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      setScrollProgress(max > 0 ? Math.min(window.scrollY / max, 1) : 0);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const elements = document.querySelectorAll<HTMLElement>(".reveal:not(.is-visible)");
+    if (elements.length === 0) return;
+
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach((el) => el.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -48px 0px" },
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [activeFilter, language]);
 
   const localizedProjects = useMemo(
     () => projects.map((project) => localizeProject(project, language)),
@@ -961,6 +1002,11 @@ export default function Home() {
 
   return (
     <main className="relative overflow-hidden">
+      <div
+        className="scroll-progress"
+        style={{ transform: `scaleX(${scrollProgress})` }}
+        aria-hidden="true"
+      />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[32rem] bg-[radial-gradient(circle_at_top,rgba(201,107,58,0.16),transparent_55%)]" />
       <div className="pointer-events-none absolute right-[-8rem] top-32 h-80 w-80 rounded-full bg-[rgba(21,74,75,0.14)] blur-3xl" />
       <div className="pointer-events-none absolute left-[-5rem] top-[34rem] h-72 w-72 rounded-full bg-[rgba(226,197,141,0.18)] blur-3xl" />
@@ -1017,7 +1063,7 @@ export default function Home() {
           <div className="space-y-8">
             <div className="reveal space-y-5">
               <p className="eyebrow text-xs font-bold">{copy.hero.eyebrow}</p>
-              <h1 className="section-title max-w-4xl text-[clamp(3.2rem,8vw,6.5rem)] font-bold leading-[0.94]">
+              <h1 className="section-title max-w-4xl text-[clamp(2.9rem,6.5vw,5.6rem)] font-bold leading-[1.02]">
                 {copy.hero.title}
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-[color:var(--muted)] sm:text-xl">
@@ -1025,7 +1071,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="reveal flex flex-col gap-3 sm:flex-row" style={{ animationDelay: "120ms" }}>
+            <div className="reveal flex flex-col gap-3 sm:flex-row" style={{ transitionDelay: "120ms" }}>
               <a
                 href="#projects"
                 className="inline-flex items-center justify-center rounded-full bg-[color:var(--ink)] px-6 py-3.5 text-sm font-semibold text-white transition hover:translate-y-[-1px] hover:bg-black"
@@ -1040,7 +1086,7 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="reveal grid gap-3 sm:grid-cols-3" style={{ animationDelay: "220ms" }}>
+            <div className="reveal grid gap-3 sm:grid-cols-3" style={{ transitionDelay: "220ms" }}>
               {copy.hero.stats.map((item) => (
                 <div key={item.label} className="glass-card rounded-[1.6rem] p-5">
                   <p className="font-display text-3xl font-bold tracking-tight">{item.value}</p>
@@ -1050,7 +1096,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="reveal relative lg:justify-self-end" style={{ animationDelay: "180ms" }}>
+          <div className="reveal relative lg:justify-self-end" style={{ transitionDelay: "180ms" }}>
             <div className="float-slow glass-card relative rounded-[2rem] p-4">
               <ProjectPreview project={localizedProjects[0]} />
             </div>
@@ -1073,7 +1119,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="reveal mb-8 flex flex-wrap gap-3" style={{ animationDelay: "80ms" }}>
+          <div className="reveal mb-8 flex flex-wrap gap-3" style={{ transitionDelay: "80ms" }}>
             {projectFilters.map((filter) => {
               const isActive = activeFilter === filter.key;
 
@@ -1099,7 +1145,7 @@ export default function Home() {
               <article
                 key={project.name}
                 className="glass-card reveal group relative grid gap-8 overflow-hidden rounded-[2rem] border border-transparent p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[color:var(--accent)] hover:shadow-[0_28px_54px_rgba(21,39,55,0.18)] lg:grid-cols-[1.08fr_0.92fr] lg:p-8"
-                style={{ animationDelay: `${index * 120}ms` }}
+                style={{ transitionDelay: `${Math.min(index, 2) * 100}ms` }}
               >
                 <div className="pointer-events-none absolute right-6 top-6">
                   <span className="inline-flex items-center rounded-full border border-[color:var(--line)] bg-white/80 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[color:var(--accent-deep)] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
@@ -1201,7 +1247,7 @@ export default function Home() {
                 <article
                   key={item.title}
                   className="glass-card reveal rounded-[1.75rem] p-6"
-                  style={{ animationDelay: `${index * 120}ms` }}
+                  style={{ transitionDelay: `${Math.min(index, 2) * 100}ms` }}
                 >
                   <p className="mb-6 font-display text-4xl font-bold tracking-tight text-[color:var(--accent)]">
                     0{index + 1}
@@ -1214,7 +1260,7 @@ export default function Home() {
               ))}
             </div>
 
-            <aside className="glass-card reveal rounded-[1.9rem] p-6" style={{ animationDelay: "180ms" }}>
+            <aside className="glass-card reveal rounded-[1.9rem] p-6" style={{ transitionDelay: "180ms" }}>
               <p className="eyebrow text-xs font-bold">{copy.approach.stackEyebrow}</p>
               <h3 className="section-title mt-3 text-3xl font-bold">
                 {copy.approach.stackTitle}
