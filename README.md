@@ -1,5 +1,11 @@
 # Eleonora Portfolio
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7b2e5155-bcd9-4ae6-b185-4b0a199c88c7/deploy-status)](https://app.netlify.com/projects/eleonora-portfolio/deploys)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=nextdotjs)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61dafb?logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38bdf8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+
 Personal developer portfolio for **Eleonora Nocentini Sköldebrink** — a freelance web and frontend developer. The site presents 14 client-style cases (company websites, web apps, API-heavy builds, and data projects), a verified internship reference, and a clear collaboration process.
 
 **Live site:** [eleonora-portfolio.netlify.app](https://eleonora-portfolio.netlify.app/)
@@ -17,6 +23,10 @@ Personal developer portfolio for **Eleonora Nocentini Sköldebrink** — a freel
 ### Case studies with category filters
 
 ![Projects section with filter pills and case cards](docs/screenshots/projects.png)
+
+### Verified internship reference
+
+![Reference section with internship certificate](docs/screenshots/reference.png)
 
 ## Features
 
