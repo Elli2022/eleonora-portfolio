@@ -6,7 +6,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38bdf8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-Personal developer portfolio for **Eleonora Nocentini Sköldebrink** — a freelance web and frontend developer. The site presents 14 client-style cases (company websites, web apps, API-heavy builds, and data projects), a verified internship reference, and a clear collaboration process.
+Personal developer portfolio for **Eleonora Nocentini Sköldebrink** — a freelance web and frontend developer. The site presents 15 client-style cases (company websites, web apps, API-heavy builds, and data projects), a verified internship reference, and a clear collaboration process.
 
 **Live site:** [eleonora-portfolio.netlify.app](https://eleonora-portfolio.netlify.app/)
 
@@ -30,7 +30,7 @@ Personal developer portfolio for **Eleonora Nocentini Sköldebrink** — a freel
 
 ## Features
 
-- **14 reviewable cases** — each with problem/solution/result framing, tech stack, live demo, and repository links
+- **15 reviewable cases** — each with problem/solution/result framing, tech stack, live demo, and repository links
 - **Category filtering** — company sites, web apps, data projects, and internship work
 - **Bilingual (SV/EN)** — client-side language toggle with persistent preference via `localStorage`
 - **Verified reference** — internship certificate from Capace Media Group with downloadable PDF

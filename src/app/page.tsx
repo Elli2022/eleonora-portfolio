@@ -63,7 +63,7 @@ const translations = {
       primaryCta: "Se referenser och case",
       secondaryCta: "Diskutera ert projekt",
       stats: [
-        { value: "14", label: "Case ni kan granska" },
+        { value: "15", label: "Case ni kan granska" },
         { value: "1–2 v", label: "Återkoppling på förfrågan" },
         { value: "Next + WP", label: "Typ av leveranser" },
       ],
@@ -165,7 +165,7 @@ const translations = {
       primaryCta: "View references and cases",
       secondaryCta: "Discuss your project",
       stats: [
-        { value: "14", label: "Cases you can review" },
+        { value: "15", label: "Cases you can review" },
         { value: "1–2 w", label: "Response time on inquiry" },
         { value: "Next + WP", label: "Delivery profile" },
       ],
@@ -297,6 +297,9 @@ const previewHighlightTranslationsEn: Record<string, string> = {
   "April 2024": "April 2024",
   Nyheter: "News",
   Favoriter: "Favorites",
+  Kartläggning: "Site mapping",
+  README: "README",
+  "Convertor Svenska AB": "Convertor Svenska AB",
 };
 
 const projectTranslationsEn: Record<string, ProjectTranslationEn> = {
@@ -418,6 +421,16 @@ const projectTranslationsEn: Record<string, ProjectTranslationEn> = {
       "Built and refined WordPress modules to improve reusability and CMS editing flow",
       "Structured and tightened copy for clearer messaging before staging and testing",
       "Ensured Swedish and Danish versions stayed aligned in structure and content",
+    ],
+  },
+  Dunstan: {
+    category: "Site mapping and documentation during internship",
+    summary:
+      "During an internship at Convertor Svenska AB (spring 2024), I mapped how the Dunstan client site (dunstan.se) was built after the senior developer left and the knowledge was undocumented. I reviewed theme, plugins, templates, and content flows in WordPress and compiled a README so the team could understand and maintain the site going forward.",
+    impact: [
+      "Mapped architecture, themes, and dependencies in an existing WordPress environment without internal handover",
+      "Documented site structure, key plugins, and editorial workflows so knowledge did not leave with one person",
+      "Delivered a structured README and overview that made it easier for the agency to take over operations and further development",
     ],
   },
   "Sveriges offentliga kockar": {
@@ -755,6 +768,29 @@ const projects: Project[] = [
       surface: "rgba(255, 252, 245, 0.14)",
       accent: "#e0f2f1",
       highlight: "#fcd9a5",
+    },
+  },
+
+  {
+    name: "Dunstan",
+    category: "Webbplatskartläggning under praktik",
+    summary:
+      "Under praktik hos Convertor Svenska AB (våren 2024) kartlade jag hur kundwebben Dunstan (dunstan.se) var uppbyggd när den seniora utvecklaren slutat och kunskapen inte fanns dokumenterad. Jag gick igenom tema, plugins, mallar och innehållsflöden i WordPress och sammanställde en README så teamet kunde förstå och underhålla sajten vidare.",
+    impact: [
+      "Kartlade arkitektur, teman och beroenden i en befintlig WordPress-miljö utan intern handover",
+      "Dokumenterade uppbyggnad, viktiga plugins och redaktörsflöden så kunskapen inte försvann med en person",
+      "Levererade strukturerad README och översikt som gjorde det lättare för byrån att ta över drift och vidareutveckling",
+    ],
+    stack: ["WordPress", "WooCommerce", "Kinsta", "Dokumentation"],
+    href: "https://dunstan.se/",
+    cta: "Öppna livesajt",
+    badge: "Praktik",
+    previewHighlights: ["Convertor Svenska AB", "Kartläggning", "WordPress", "README"],
+    preview: {
+      gradient: "linear-gradient(135deg, #1a2e1a 0%, #3d6b4f 48%, #c9a227 100%)",
+      surface: "rgba(255, 251, 240, 0.14)",
+      accent: "#e8f5e9",
+      highlight: "#f0e6b8",
     },
   },
 
