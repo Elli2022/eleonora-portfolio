@@ -396,13 +396,13 @@ const projectTranslationsEn: Record<string, ProjectTranslationEn> = {
     ],
   },
   Tidspuls: {
-    category: "Web app for time and attendance",
+    category: "Full-stack time and attendance app",
     summary:
-      "A logged-in web app where users create accounts, sign in, and manage time and activity in a clear workflow. Deployed as a fast SPA on Netlify.",
+      "A logged-in web app with a Laravel 11 API and Vue 3 SPA: account creation, sign-in, time logging, approvals, and GPS-backed location tracking. Deployed on Netlify with a Render-hosted backend.",
     impact: [
-      "Registration and sign-in flow designed for a secure first-use experience",
-      "Interface built to work equally well on mobile and desktop",
-      "Live Netlify environment enables quick sharing with stakeholders",
+      "Laravel REST API with auth, password reset, and role-based workflows",
+      "Vue 3 frontend built for mobile and desktop with a clear time-tracking flow",
+      "Live demo on Netlify — the portfolio reference for PHP/Laravel full-stack work",
     ],
   },
   "Convertor eBook": {
@@ -705,19 +705,20 @@ const projects: Project[] = [
 
   {
     name: "Tidspuls",
-    category: "Webbapp för tid och närvaro",
+    category: "Fullstack webbapp för tid och närvaro",
     summary:
-      "En inloggad webbapp där användare skapar konto, loggar in och jobbar med tid och aktivitet i ett tydligt flöde. Deployad som snabb SPA på Netlify.",
+      "En inloggad webbapp med Laravel 11-API och Vue 3-SPA: kontoskapande, inloggning, tidrapportering, godkännanden och GPS-stödd platsloggning. Deployad på Netlify med backend på Render.",
     impact: [
-      "Registrering och inloggning med fokus på en trygg första upplevelse",
-      "Gränssnitt byggt för att fungera lika bra på mobil som på desktop",
-      "Live-miljö på Netlify med enkel delning av länk till intressenter",
+      "Laravel REST API med auth, lösenordsåterställning och rollbaserade flöden",
+      "Vue 3-frontend byggd för mobil och desktop med tydligt tidflöde",
+      "Live-demo på Netlify — portfolions referens för PHP/Laravel fullstack",
     ],
-    stack: ["Vue 3", "TypeScript", "Netlify"],
+    stack: ["Laravel 11", "PHP 8", "Vue 3", "TypeScript", "Netlify"],
     href: "https://tidspuls-app.netlify.app/",
     cta: "Öppna livesajt",
+    repoHref: "https://github.com/Elli2022/tidspuls-app",
     badge: "Webbapp",
-    previewHighlights: ["Auth-flöde", "Responsiv", "Tid i fokus", "Live på Netlify"],
+    previewHighlights: ["Laravel API", "Vue 3 SPA", "Auth-flöde", "Live på Netlify"],
     preview: {
       gradient: "linear-gradient(135deg, #1e1b4b 0%, #5b21b6 48%, #fb7185 100%)",
       surface: "rgba(255, 255, 255, 0.16)",
@@ -872,6 +873,8 @@ const stack = [
   "Next.js 16",
   "React 19",
   "TypeScript",
+  "Laravel 11",
+  "PHP 8",
   "Tailwind CSS 4",
   "Netlify-ready",
 ];
