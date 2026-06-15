@@ -143,6 +143,7 @@ const translations = {
         "Maila en kort beskrivning av mål, tid och budgetram – jag återkopplar inom rimlig tid med förslag på nästa steg eller ett första möte. Passar det för er kan vi ta fram scope och offert innan produktion startar.",
     },
     footerTail: "Portfolio byggd med Next.js, React och Tailwind CSS.",
+    footerCv: "Fullständigt CV med erfarenhet och utbildning:",
     ctaFallbacks: {
       openLiveSite: "Öppna livesajt",
       openNewsPage: "Öppna nyhetssidan",
@@ -245,6 +246,7 @@ const translations = {
         "Send a short description of goals, timeline, and budget frame — I will reply within a reasonable time with a suggested next step or an initial meeting. If it is a fit, we can define scope and quote before production starts.",
     },
     footerTail: "Portfolio built with Next.js, React, and Tailwind CSS.",
+    footerCv: "Full CV with experience and education:",
     ctaFallbacks: {
       openLiveSite: "Open live site",
       openNewsPage: "Open news page",
@@ -498,7 +500,7 @@ const projects: Project[] = [
     stack: ["Next.js", "TypeScript", "React", "Tailwind CSS", "Netlify"],
     href: "https://trygg-vardag-skane.netlify.app/",
     cta: "Öppna livesajt",
-    repoHref: "https://github.com/Elli2022/trygg-vardag-portfolio",
+    repoHref: "https://github.com/Elli2022/trygg-vardag-skane-website",
     badge: "Företag",
     previewHighlights: ["Kontaktformulär", "Lokal SEO", "Responsiv", "Live på Netlify"],
     preview: {
@@ -520,9 +522,9 @@ const projects: Project[] = [
       "Resultat: Robust backendfundament på Netlify Functions som är redo för vidare funktioner utan att låsa till tung serverdrift",
     ],
     stack: ["Node.js", "Express", "TypeScript", "PostgreSQL", "JWT", "Netlify Functions"],
-    href: "https://community-auth-forum.netlify.app/",
+    href: "https://community-auth-platform.netlify.app/",
     cta: "Öppna livesajt",
-    repoHref: "https://github.com/Elli2022/community-auth-forum",
+    repoHref: "https://github.com/Elli2022/community-hub",
     badge: "Pågår",
     previewHighlights: ["Auth & JWT", "PostgreSQL", "Flöde & vänner", "Netlify API"],
     preview: {
@@ -544,9 +546,9 @@ const projects: Project[] = [
     "Resultat: Strukturerad partner-payload med integrationsredo flöde som kortar vägen från inkorg till vidare hantering",
   ],
   stack: ["TypeScript", "React", "IMAP", "LLM", "REST API", "Netlify"],
-  href: "https://inboxbridge-elli-mvp.netlify.app/",
+  href: "https://inboxbridge-mvp.netlify.app/",
   cta: "Öppna livesajt",
-  repoHref: "https://github.com/Elli2022/portfolio-ai-mvp",
+  repoHref: "https://github.com/Elli2022/inboxbridge",
   badge: "AI",
   previewHighlights: ["IMAP ingestion", "LLM processing", "Partner API", "Pipeline demo"],
   preview: {
@@ -568,7 +570,7 @@ const projects: Project[] = [
       "Deployad live på Netlify med snabb och stabil frontend",
     ],
     stack: ["Next.js", "TypeScript", "React", "Netlify"],
-    href: "https://nordflux.netlify.app/",
+    href: "https://nordflux-ebook-2026.netlify.app/",
     cta: "Öppna livesajt",
     repoHref: "https://github.com/Elli2022/nordflux-ebook",
     badge: "Produkt",
@@ -643,7 +645,7 @@ const projects: Project[] = [
     stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "PWA"],
     href: "https://avantrysparken.netlify.app/",
     cta: "Öppna livesajt",
-    repoHref: "https://github.com/Elli2022/avantrysparken",
+    repoHref: "https://github.com/Elli2022/kids-learning-games-pwa",
     badge: "Spel",
     previewHighlights: ["Barn 5–7 år", "2 minispel", "Web Audio", "PWA"],
     preview: {
@@ -690,7 +692,7 @@ const projects: Project[] = [
     stack: ["Next.js", "TypeScript", "React", "Netlify"],
     href: "https://italidea.netlify.app/",
     cta: "Öppna livesajt",
-    repoHref: "https://github.com/Elli2022/Italidea",
+    repoHref: "https://github.com/Elli2022/italidea-website",
     badge: "Organisation",
     previewHighlights: ["Italienska", "Responsiv", "Tydliga tjänster", "Live på Netlify"],
     preview: {
@@ -737,7 +739,7 @@ const projects: Project[] = [
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "React", "Netlify"],
     href: "https://convertor-e-book.netlify.app/",
     cta: "Öppna livesajt",
-    repoHref: "https://github.com/Elli2022/convertor-e-book",
+    repoHref: "https://github.com/Elli2022/convertor-interactive-ebook",
     badge: "Praktik",
     previewHighlights: ["Convertor Svenska AB", "April 2024", "Landningssida", "Live på Netlify"],
     preview: {
@@ -851,9 +853,9 @@ const projects: Project[] = [
       "Frontend i Next.js med stöd för backend-synk vid behov",
     ],
     stack: ["Next.js", "TypeScript", "Express", "MongoDB"],
-    href: "https://ellisreceptbok.netlify.app/",
+    href: "https://recipe-book-platform.netlify.app/",
     cta: "Öppna livesajt",
-    repoHref: "https://github.com/Elli2022/receptbok",
+    repoHref: "https://github.com/Elli2022/recipe-book-platform",
     badge: "Mat & vardag",
     previewHighlights: ["PWA", "Responsiv", "Favoriter", "Live på Netlify"],
     preview: {
@@ -882,6 +884,10 @@ const links = [
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/eleonora-nocentini-sk%C3%B6ldebrink-a2a46a63/",
+  },
+  {
+    label: "CV",
+    href: "https://developer-resume-site.netlify.app/",
   },
 ];
 
@@ -1424,6 +1430,17 @@ export default function Home() {
             <div className="mt-10 border-t border-[color:var(--line)] pt-5 text-sm text-[color:var(--muted)]">
               <p>
                 © {currentYear} Eleonora Nocentini Sköldebrink. {copy.footerTail}
+              </p>
+              <p className="mt-2">
+                {copy.footerCv}{" "}
+                <a
+                  href="https://developer-resume-site.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-medium text-[color:var(--ink)] underline-offset-2 hover:underline"
+                >
+                  developer-resume-site.netlify.app
+                </a>
               </p>
             </div>
           </div>

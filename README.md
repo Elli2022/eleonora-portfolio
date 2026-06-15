@@ -6,9 +6,11 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38bdf8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-Personal developer portfolio for **Eleonora Nocentini Sköldebrink** — a freelance web and frontend developer. The site presents 15 client-style cases (company websites, web apps, API-heavy builds, and data projects), a verified internship reference, and a clear collaboration process.
+Personal developer portfolio for **Eleonora Nocentini Sköldebrink** — freelance web and frontend developer. Primary site for clients: 15 case studies, collaboration process, and verified internship reference.
 
-**Live site:** [eleonora-portfolio.netlify.app](https://eleonora-portfolio.netlify.app/)
+**Full CV (experience & education):** [developer-resume-site.netlify.app](https://developer-resume-site.netlify.app/)
+
+**Live portfolio:** [eleonora-portfolio.netlify.app](https://eleonora-portfolio.netlify.app/)
 
 ## Screenshots
 
@@ -87,3 +89,7 @@ public/
 ## License
 
 © Eleonora Nocentini Sköldebrink. All rights reserved.
+
+## Related
+
+- **[Online CV](https://developer-resume-site.netlify.app/)** — work history, education, and background (companion site, not a second portfolio)
