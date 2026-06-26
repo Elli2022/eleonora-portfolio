@@ -63,7 +63,7 @@ const translations = {
       primaryCta: "Se referenser och case",
       secondaryCta: "Diskutera ert projekt",
       stats: [
-        { value: "15", label: "Case ni kan granska" },
+        { value: "16", label: "Case ni kan granska" },
         { value: "1–2 v", label: "Återkoppling på förfrågan" },
         { value: "Next + WP", label: "Typ av leveranser" },
       ],
@@ -166,7 +166,7 @@ const translations = {
       primaryCta: "View references and cases",
       secondaryCta: "Discuss your project",
       stats: [
-        { value: "15", label: "Cases you can review" },
+        { value: "16", label: "Cases you can review" },
         { value: "1–2 w", label: "Response time on inquiry" },
         { value: "Next + WP", label: "Delivery profile" },
       ],
@@ -305,6 +305,16 @@ const previewHighlightTranslationsEn: Record<string, string> = {
 };
 
 const projectTranslationsEn: Record<string, ProjectTranslationEn> = {
+  "Nordstrand Commerce": {
+    category: "Headless e-commerce with API and Stripe",
+    summary:
+      "Problem: E-commerce clients and employers need a real shop with a backend — not just a frontend demo. Solution: Monorepo with Next.js storefront, Express API, PostgreSQL, inventory logic, and Stripe Checkout (card, Klarna, Apple Pay). Result: Full purchase flow from cart to paid order with webhook confirmation.",
+    impact: [
+      "Problem: Need for a credible commerce demo showing both UX and server-side business logic",
+      "Solution: Separate API with Prisma, stock validation, order handling, and Stripe webhooks",
+      "Result: Live shop ready for portfolio, e-commerce clients, and fullstack/backend interviews",
+    ],
+  },
   "Trygg Vardag Skåne": {
     category: "Company website for care and assistance services",
     summary:
@@ -486,6 +496,29 @@ const localizeProject = (project: Project, language: Language): Project => {
 
 const projects: Project[] = [
 
+  {
+    name: "Nordstrand Commerce",
+    category: "Headless e-handel med API och Stripe",
+    summary:
+      "Problem: E-handelskunder och arbetsgivare behöver se en riktig butik med backend — inte bara en frontend-demo. Lösning: Monorepo med Next.js-butik, Express API, PostgreSQL, lagerlogik och Stripe Checkout (kort, Klarna, Apple Pay). Resultat: Fullständigt köpflöde från varukorg till betald order med webhook-bekräftelse.",
+    impact: [
+      "Problem: Behov av trovärdig commerce-demo som visar både UX och server-side affärslogik",
+      "Lösning: Separat API med Prisma, lagervalidering, orderhantering och Stripe webhooks",
+      "Resultat: Live-butik redo för portfolio, e-handelskunder och fullstack/backend-intervjuer",
+    ],
+    stack: ["Next.js", "Express", "TypeScript", "PostgreSQL", "Prisma", "Stripe", "Docker"],
+    href: "https://nordstrand-commerce.netlify.app/",
+    cta: "Öppna butiken",
+    repoHref: "https://github.com/Elli2022/nordstrand-commerce",
+    badge: "Webbapp",
+    previewHighlights: ["Stripe Checkout", "REST API", "Lager & ordrar", "Monorepo"],
+    preview: {
+      gradient: "linear-gradient(135deg, #2a4545 0%, #6f8f84 45%, #f5f0e8 100%)",
+      surface: "rgba(255, 255, 255, 0.16)",
+      accent: "#f5f0e8",
+      highlight: "#d4e4dc",
+    },
+  },
 
   {
     name: "Trygg Vardag Skåne",
