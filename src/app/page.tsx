@@ -77,6 +77,7 @@ const translations = {
         "När ni utvärderar en leverantör behöver ni se bredd: landningssidor, företagswebbar, webbappar i Next/React, API‑driven backend, live‑data‑ och mobilappar samt dataverktyg – och CMS‑arbete i WordPress där det passar. Märkta praktikcase visar hur jag jobbat i byråmiljö med äkta krav. Jag tar ägarskap för lösningen vi gemensamt landar och kan bygga vidare när ni lanserar nästa steg.",
       hoverCue: "Öppna case",
       demoLabel: "Demo: varukorg → Stripe → bekräftad order",
+      demoVideoLink: "Öppna demo-video (MP4)",
       impactLabel: "Det här projektet visar",
       stackLabel: "Stack och fokus",
       repoLabel: "Se repo",
@@ -181,6 +182,7 @@ const translations = {
         "When evaluating a supplier, you need range: landing pages, company websites, Next/React web apps, API-driven backend work, live-data and mobile apps, and data tools — plus WordPress CMS work where relevant. Marked internship cases show how I work in agency environments with real requirements. I take ownership of the solution we agree on and can continue building as you launch the next phase.",
       hoverCue: "Open case",
       demoLabel: "Demo: cart → Stripe → confirmed order",
+      demoVideoLink: "Open demo video (MP4)",
       impactLabel: "This project demonstrates",
       stackLabel: "Stack and focus",
       repoLabel: "View repo",
@@ -953,11 +955,15 @@ function ExternalIcon() {
 
 function ProjectDemo({
   project,
-  demoLabel
+  demoLabel,
+  demoVideoLink
 }: {
   project: Project;
   demoLabel: string;
+  demoVideoLink: string;
 }) {
+  const videoSrc = `https://eleonora-portfolio.netlify.app${project.demoVideo}`;
+
   return (
     <div className="space-y-3">
       <video
@@ -970,6 +976,15 @@ function ProjectDemo({
         <source src={project.demoVideo} type="video/mp4" />
       </video>
       <p className="text-center text-sm text-[color:var(--muted)]">{demoLabel}</p>
+      <a
+        href={videoSrc}
+        target="_blank"
+        rel="noreferrer"
+        className="flex items-center justify-center gap-2 text-sm font-semibold text-[color:var(--accent-deep)] underline-offset-4 hover:underline"
+      >
+        {demoVideoLink}
+        <ExternalIcon />
+      </a>
     </div>
   );
 }
@@ -1316,6 +1331,17 @@ export default function Home() {
                           {translateProjectCta(project.cta, language)}
                           <ExternalIcon />
                         </a>
+                        {project.demoVideo ? (
+                          <a
+                            href={`https://eleonora-portfolio.netlify.app${project.demoVideo}`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-2 rounded-full border border-[color:var(--line)] bg-white/75 px-5 py-3 text-sm font-semibold text-[color:var(--ink)] transition hover:border-[color:var(--accent)] hover:bg-white"
+                          >
+                            {copy.projects.demoVideoLink}
+                            <ExternalIcon />
+                          </a>
+                        ) : null}
                         {project.repoHref ? (
                           <a
                             href={project.repoHref}
@@ -1334,7 +1360,11 @@ export default function Home() {
 
                 <div className="self-center">
                   {project.demoVideo ? (
-                    <ProjectDemo project={project} demoLabel={copy.projects.demoLabel} />
+                    <ProjectDemo
+                      project={project}
+                      demoLabel={copy.projects.demoLabel}
+                      demoVideoLink={copy.projects.demoVideoLink}
+                    />
                   ) : (
                     <ProjectPreview project={project} />
                   )}
