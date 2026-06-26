@@ -13,6 +13,8 @@ type Project = {
   repoHref?: string;
   badge: string;
   previewHighlights: string[];
+  demoVideo?: string;
+  demoPoster?: string;
   preview: {
     gradient: string;
     surface: string;
@@ -74,6 +76,7 @@ const translations = {
       intro:
         "När ni utvärderar en leverantör behöver ni se bredd: landningssidor, företagswebbar, webbappar i Next/React, API‑driven backend, live‑data‑ och mobilappar samt dataverktyg – och CMS‑arbete i WordPress där det passar. Märkta praktikcase visar hur jag jobbat i byråmiljö med äkta krav. Jag tar ägarskap för lösningen vi gemensamt landar och kan bygga vidare när ni lanserar nästa steg.",
       hoverCue: "Öppna case",
+      demoLabel: "Demo: varukorg → Stripe → bekräftad order",
       impactLabel: "Det här projektet visar",
       stackLabel: "Stack och fokus",
       repoLabel: "Se repo",
@@ -177,6 +180,7 @@ const translations = {
       intro:
         "When evaluating a supplier, you need range: landing pages, company websites, Next/React web apps, API-driven backend work, live-data and mobile apps, and data tools — plus WordPress CMS work where relevant. Marked internship cases show how I work in agency environments with real requirements. I take ownership of the solution we agree on and can continue building as you launch the next phase.",
       hoverCue: "Open case",
+      demoLabel: "Demo: cart → Stripe → confirmed order",
       impactLabel: "This project demonstrates",
       stackLabel: "Stack and focus",
       repoLabel: "View repo",
@@ -512,6 +516,8 @@ const projects: Project[] = [
     repoHref: "https://github.com/Elli2022/nordstrand-commerce",
     badge: "Webbapp",
     previewHighlights: ["Stripe Checkout", "REST API", "Lager & ordrar", "Monorepo"],
+    demoVideo: "/demos/nordstrand-checkout.mp4",
+    demoPoster: "/demos/nordstrand-checkout-poster.jpg",
     preview: {
       gradient: "linear-gradient(135deg, #2a4545 0%, #6f8f84 45%, #f5f0e8 100%)",
       surface: "rgba(255, 255, 255, 0.16)",
@@ -945,6 +951,29 @@ function ExternalIcon() {
   );
 }
 
+function ProjectDemo({
+  project,
+  demoLabel
+}: {
+  project: Project;
+  demoLabel: string;
+}) {
+  return (
+    <div className="space-y-3">
+      <video
+        className="w-full overflow-hidden rounded-[1.75rem] border border-[color:var(--line)] bg-black shadow-[0_24px_48px_rgba(21,39,55,0.18)]"
+        controls
+        playsInline
+        preload="metadata"
+        poster={project.demoPoster}
+      >
+        <source src={project.demoVideo} type="video/mp4" />
+      </video>
+      <p className="text-center text-sm text-[color:var(--muted)]">{demoLabel}</p>
+    </div>
+  );
+}
+
 function ProjectPreview({ project }: { project: Project }) {
   return (
     <div
@@ -1304,7 +1333,11 @@ export default function Home() {
                 </div>
 
                 <div className="self-center">
-                  <ProjectPreview project={project} />
+                  {project.demoVideo ? (
+                    <ProjectDemo project={project} demoLabel={copy.projects.demoLabel} />
+                  ) : (
+                    <ProjectPreview project={project} />
+                  )}
                 </div>
               </article>
             ))}
