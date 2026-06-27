@@ -889,10 +889,12 @@ const projects: Project[] = [
       "Sparade, testade och funktionssäkrade formulären så de fungerade i skarp miljö",
     ],
     stack: ["TYPO3", "CMS", "Formulär"],
-    href: "https://www.sparbankensyd.se/",
+    href: "https://www.sparbankensyd.se/sv/privat/vara-tjanster/privatlan/ansokan-privatlan",
     cta: "Öppna livesajt",
     badge: "Praktik",
     previewHighlights: ["Convertor", "TYPO3", "Formulär", "Backend"],
+    previewImage: "/previews/sparbanken-syd.jpg",
+    previewImageAlt: "Sparbanken Syd – formulärsida för privatlåneansökan",
     preview: {
       gradient: "linear-gradient(135deg, #0f2c52 0%, #1d4ed8 48%, #38bdf8 100%)",
       surface: "rgba(240, 249, 255, 0.16)",
