@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "capture:screenshots": "node scripts/capture-project-screenshots.mjs"
   },
   "dependencies": {
     "next": "^16.2.9",
@@ -20,6 +21,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "^16.2.9",
+    "playwright": "^1.51.1",
     "tailwindcss": "^4.3.0",
     "typescript": "^5"
   }

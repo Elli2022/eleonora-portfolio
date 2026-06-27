@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 
 type Project = {
   name: string;
@@ -15,6 +16,8 @@ type Project = {
   previewHighlights: string[];
   demoVideo?: string;
   demoPoster?: string;
+  previewImage?: string;
+  previewImageAlt?: string;
   preview: {
     gradient: string;
     surface: string;
@@ -520,6 +523,8 @@ const projects: Project[] = [
     previewHighlights: ["Stripe Checkout", "REST API", "Lager & ordrar", "Monorepo"],
     demoVideo: "/demos/nordstrand-checkout.mp4",
     demoPoster: "/demos/nordstrand-checkout-poster.jpg",
+    previewImage: "/previews/nordstrand-commerce.jpg",
+    previewImageAlt: "Nordstrand Commerce – startsida med produkter",
     preview: {
       gradient: "linear-gradient(135deg, #2a4545 0%, #6f8f84 45%, #f5f0e8 100%)",
       surface: "rgba(255, 255, 255, 0.16)",
@@ -544,6 +549,8 @@ const projects: Project[] = [
     repoHref: "https://github.com/Elli2022/trygg-vardag-skane-website",
     badge: "Företag",
     previewHighlights: ["Kontaktformulär", "Lokal SEO", "Responsiv", "Live på Netlify"],
+    previewImage: "/previews/trygg-vardag-skane.jpg",
+    previewImageAlt: "Trygg Vardag Skåne – företagswebb för omsorg och ledsagning",
     preview: {
       gradient: "linear-gradient(135deg, #3d5a4c 0%, #6b8f71 45%, #e8c4b8 100%)",
       surface: "rgba(255, 251, 245, 0.16)",
@@ -616,6 +623,8 @@ const projects: Project[] = [
     repoHref: "https://github.com/Elli2022/nordflux-ebook",
     badge: "Produkt",
     previewHighlights: ["Landningssida", "Responsiv", "Konvertering", "Live på Netlify"],
+    previewImage: "/previews/nordflux-ebook.jpg",
+    previewImageAlt: "Nordflux eBook – produkt- och landningssida",
     preview: {
       gradient: "linear-gradient(135deg, #0b1020 0%, #1d4ed8 52%, #22d3ee 100%)",
       surface: "rgba(255, 255, 255, 0.16)",
@@ -640,6 +649,8 @@ const projects: Project[] = [
     repoHref: "https://github.com/Elli2022/ferry-arrivals-sweden",
     badge: "Webbapp",
     previewHighlights: ["Live-data", "3 hamnar", "Parser", "Auto-uppdatering"],
+    previewImage: "/previews/ferry-arrivals-sweden.jpg",
+    previewImageAlt: "Färjeankomster Sverige – live-data-app för färjeankomster",
     preview: {
       gradient: "linear-gradient(135deg, #0c1929 0%, #0e7490 52%, #2dd4bf 100%)",
       surface: "rgba(255, 255, 255, 0.14)",
@@ -712,6 +723,8 @@ const projects: Project[] = [
     cta: "Öppna livesajt",
     badge: "Juridik",
     previewHighlights: ["Affärsjuridik", "Malmö", "Tjänstesidor", "Live på Netlify"],
+    previewImage: "/previews/w-advokatbyra.jpg",
+    previewImageAlt: "W Advokatbyrå – förtroendeingivande företagswebb",
     preview: {
       gradient: "linear-gradient(135deg, #121826 0%, #20345a 55%, #c7a56d 100%)",
       surface: "rgba(255, 248, 236, 0.14)",
@@ -736,6 +749,8 @@ const projects: Project[] = [
     repoHref: "https://github.com/Elli2022/italidea-website",
     badge: "Organisation",
     previewHighlights: ["Italienska", "Responsiv", "Tydliga tjänster", "Live på Netlify"],
+    previewImage: "/previews/italidea.jpg",
+    previewImageAlt: "Italidea – webb för språktolkning och stöd på italienska",
     preview: {
       gradient: "linear-gradient(135deg, #0f172a 0%, #166534 50%, #f59e0b 100%)",
       surface: "rgba(255, 255, 255, 0.16)",
@@ -760,6 +775,8 @@ const projects: Project[] = [
     repoHref: "https://github.com/Elli2022/tidspuls-app",
     badge: "Webbapp",
     previewHighlights: ["Laravel API", "Vue 3 SPA", "Auth-flöde", "Live på Netlify"],
+    previewImage: "/previews/tidspuls.jpg",
+    previewImageAlt: "Tidspuls – webbapp för tid och närvaro",
     preview: {
       gradient: "linear-gradient(135deg, #1e1b4b 0%, #5b21b6 48%, #fb7185 100%)",
       surface: "rgba(255, 255, 255, 0.16)",
@@ -989,15 +1006,21 @@ function ProjectDemo({
   );
 }
 
-function ProjectPreview({ project }: { project: Project }) {
+function ProjectBrowserFrame({
+  project,
+  children,
+}: {
+  project: Project;
+  children: ReactNode;
+}) {
   return (
     <div
-      className="relative overflow-hidden rounded-[1.75rem] border border-white/20 p-4 text-white shadow-2xl"
+      className="relative overflow-hidden rounded-[1.75rem] border border-white/20 text-white shadow-2xl"
       style={{ background: project.preview.gradient }}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.28),transparent_30%)]" />
-      <div className="relative space-y-4">
-        <div className="flex items-center justify-between">
+      <div className="relative">
+        <div className="flex items-center justify-between px-4 py-3">
           <div className="flex gap-2">
             <span className="h-2.5 w-2.5 rounded-full bg-white/85" />
             <span className="h-2.5 w-2.5 rounded-full bg-white/45" />
@@ -1010,6 +1033,33 @@ function ProjectPreview({ project }: { project: Project }) {
             {project.badge}
           </span>
         </div>
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function ProjectPreview({ project }: { project: Project }) {
+  if (project.previewImage) {
+    return (
+      <ProjectBrowserFrame project={project}>
+        <div className="border-t border-white/12 bg-black/10 p-2 pt-0">
+          <Image
+            src={project.previewImage}
+            alt={project.previewImageAlt ?? `${project.name} – skärmdump`}
+            width={1280}
+            height={800}
+            className="block aspect-[16/10] w-full rounded-[1.2rem] border border-white/12 object-cover object-top"
+            sizes="(min-width: 1024px) 42vw, 100vw"
+          />
+        </div>
+      </ProjectBrowserFrame>
+    );
+  }
+
+  return (
+    <ProjectBrowserFrame project={project}>
+      <div className="space-y-4 px-4 pb-4">
         <div className="space-y-3 rounded-[1.4rem] border border-white/12 bg-black/12 p-5 backdrop-blur-sm">
           <p className="text-xs font-semibold uppercase tracking-[0.26em] text-white/70">
             {project.category}
@@ -1037,7 +1087,7 @@ function ProjectPreview({ project }: { project: Project }) {
           </div>
         </div>
       </div>
-    </div>
+    </ProjectBrowserFrame>
   );
 }
 
