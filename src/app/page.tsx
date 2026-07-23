@@ -68,7 +68,7 @@ const translations = {
       primaryCta: "Se referenser och case",
       secondaryCta: "Diskutera ert projekt",
       stats: [
-        { value: "16", label: "Case ni kan granska" },
+        { value: "17", label: "Case ni kan granska" },
         { value: "1–2 v", label: "Återkoppling på förfrågan" },
         { value: "Next + WP", label: "Typ av leveranser" },
       ],
@@ -173,7 +173,7 @@ const translations = {
       primaryCta: "View references and cases",
       secondaryCta: "Discuss your project",
       stats: [
-        { value: "16", label: "Cases you can review" },
+        { value: "17", label: "Cases you can review" },
         { value: "1–2 w", label: "Response time on inquiry" },
         { value: "Next + WP", label: "Delivery profile" },
       ],
@@ -462,7 +462,16 @@ const projectTranslationsEn: Record<string, ProjectTranslationEn> = {
       "Resolved technical blockers that slowed editors and marketers in CMS publishing",
       "Stepped in effectively when senior developers were allocated to other client work",
       "Improved operational stability and clearer update workflows for the site",
-      "Updated and maintained content on the Aldrig Ensam website, keeping information current, accurate, and user-friendly",
+    ],
+  },
+  "Aldrig Ensam": {
+    category: "Content management in WordPress during internship",
+    summary:
+      "During an internship at Capace Media, I contributed to the non-profit organization Aldrig Ensam's web presence by updating and maintaining content, keeping information current, accurate, and user-friendly for visitors.",
+    impact: [
+      "Continuously updated and maintained content so pages stayed current and accurate",
+      "Contributed to a clear, user-friendly experience for the organization's visitors",
+      "Worked in WordPress as part of the agency's ongoing management of the client's digital presence",
     ],
   },
   "Sparbanken Syd": {
@@ -865,7 +874,6 @@ const projects: Project[] = [
       "Löste tekniska hinder som stoppade marknadsförare och redaktörer från smidiga publiceringsflöden i CMS",
       "Kunde ta vid när senior utvecklare var upptagen med andra kundprojekt",
       "Bidrog till stabil drift och tydligare arbetsflöden vid uppdateringar av sajten",
-      "Uppdaterade och underhöll innehåll på webbplatsen Aldrig Ensam så att informationen förblev aktuell, korrekt och användarvänlig",
     ],
     stack: ["WordPress"],
     href: "https://sverigesoffentligakockar.se/nyheter/",
@@ -879,6 +887,31 @@ const projects: Project[] = [
       surface: "rgba(255, 251, 235, 0.14)",
       accent: "#faf6eb",
       highlight: "#fcd34d",
+    },
+  },
+
+  {
+    name: "Aldrig Ensam",
+    category: "Innehållsförvaltning i WordPress under praktik",
+    summary:
+      "Under praktik på webbyrån Capace Media bidrog jag till den ideella organisationen Aldrig Ensams webbnärvaro genom att uppdatera och underhålla innehåll, så att informationen förblev aktuell, korrekt och användarvänlig för besökarna.",
+    impact: [
+      "Uppdaterade och underhöll innehåll löpande så att sidorna hölls aktuella och korrekta",
+      "Bidrog till en tydlig och användarvänlig upplevelse för organisationens besökare",
+      "Arbetade i WordPress som en del av byråns löpande förvaltning av kundens digitala närvaro",
+    ],
+    stack: ["WordPress"],
+    href: "https://aldrigensam.com/",
+    cta: "Öppna livesajt",
+    badge: "Praktik",
+    previewHighlights: ["Capace Media", "WordPress", "Innehåll", "Aktuellt"],
+    previewImage: "/previews/aldrig-ensam.jpg",
+    previewImageAlt: "Aldrig Ensam – startsida för den ideella organisationen",
+    preview: {
+      gradient: "linear-gradient(135deg, #0b1f3a 0%, #1e3a8a 48%, #64748b 100%)",
+      surface: "rgba(226, 232, 240, 0.16)",
+      accent: "#eef2ff",
+      highlight: "#c7d2fe",
     },
   },
 
