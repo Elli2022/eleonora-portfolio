@@ -462,6 +462,7 @@ const projectTranslationsEn: Record<string, ProjectTranslationEn> = {
       "Resolved technical blockers that slowed editors and marketers in CMS publishing",
       "Stepped in effectively when senior developers were allocated to other client work",
       "Improved operational stability and clearer update workflows for the site",
+      "Updated and maintained content on the Aldrig Ensam website, keeping information current, accurate, and user-friendly",
     ],
   },
   "Sparbanken Syd": {
@@ -864,6 +865,7 @@ const projects: Project[] = [
       "Löste tekniska hinder som stoppade marknadsförare och redaktörer från smidiga publiceringsflöden i CMS",
       "Kunde ta vid när senior utvecklare var upptagen med andra kundprojekt",
       "Bidrog till stabil drift och tydligare arbetsflöden vid uppdateringar av sajten",
+      "Uppdaterade och underhöll innehåll på webbplatsen Aldrig Ensam så att informationen förblev aktuell, korrekt och användarvänlig",
     ],
     stack: ["WordPress"],
     href: "https://sverigesoffentligakockar.se/nyheter/",
