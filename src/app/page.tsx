@@ -872,6 +872,8 @@ const projects: Project[] = [
     cta: "Öppna nyhetssidan",
     badge: "Praktik",
     previewHighlights: ["Capace Media", "Malmö", "WordPress", "Nyheter"],
+    previewImage: "/previews/sveriges-offentliga-kockar.jpg",
+    previewImageAlt: "Sveriges offentliga kockar – nyhetssida i WordPress",
     preview: {
       gradient: "linear-gradient(135deg, #134e4a 0%, #276749 46%, #b7791f 100%)",
       surface: "rgba(255, 251, 235, 0.14)",
